@@ -1,0 +1,58 @@
+{
+    "Blåmes": {
+        "name": "Blåmes",
+        "latin": "Cyanistes caeruleus",
+        "description": "Den lilla fågeln är med sin blågula fjäderdräkt rätt enkel att känna igen och mycket vanlig i stora delar av Europa.",
+        "distribution": "Europa",
+        "url": "https://sv.wikipedia.org/wiki/Blåmes"
+    },
+    "Kungsfiskare": {
+        "name": "Kungsfiskare",
+        "latin": "Alcedo atthis",
+        "description": "Denna gråsparvstora fågelart har kungsfiskarnas typiska profil med kort stjärt, stort huvud och lång näbb. Den är blågrön på ovansidan och orange på undersidan. Den lever vid trädkantade åar och floder och ses ofta när den flyger lågt över vattnet i rak, snabb flykt samtidigt som den lockar.",
+        "distribution": "Europa, Asien och Norra Afrika",
+        "url": "https://sv.wikipedia.org/wiki/Kungsfiskare"
+    },
+    "Rödhake": {
+        "name": "Rödhake",
+        "latin": "Erithacus rubecula",
+        "description": "Rödhaken är en liten, knubbig tätting, omkring 12,5–14 centimeter lång, med stort huvud och kort stjärt. Den har orangerött bröst och ansikte inramat med grå till brun ovansida och vitaktig buk.",
+        "distribution": "Europa och Asien",
+        "url": "https://sv.wikipedia.org/wiki/Rödhake"
+    },
+    "Nötväcka": {
+        "name": "Nötväcka",
+        "latin": "Sitta europaea",
+        "description": "Nötväcka är en liten fågelart i familjen nötväckor som häckar över stora delar av Palearktis. Det är en satt fågel, med stort huvud, kort stjärt, lång spetsig näbb och starka fötter. Ovansidan är blekt blågrå, ansiktet vitt, undersidan ljusare i vitt eller orangebeige och den har svart ögonbrynsstreck.",
+        "distribution": "Europa och Asien",
+        "url": "https://sv.wikipedia.org/wiki/Nötväcka"
+    },
+    "Gröngöling": {
+        "name": "Gröngöling",
+        "latin": "Picus viridis",
+        "description": "Gröngöling är en fågel inom familjen hackspettar. Den är en stannfågel som förekommer i västra och sydvästra Asien, samt i större delen av Europa förutom på vissa öar och i de nordligaste områdena. Den är en av de vanligaste hackspettarna i Europa. Den tillhör släktet Picus, vilka är hackspettarter med gröngrå fjäderdräkt.",
+        "distribution": "Europa och västra Asien",
+        "url": "https://sv.wikipedia.org/wiki/Gröngöling"
+    },
+    "Större hackspett": {
+        "name": "Större hackspett",
+        "latin": "Dendrocopos major",
+        "description": "Större hackspett är en fågelart inom familjen hackspettar (Picidae). Den förekommer i Europa, norra Afrika och norra Asien och merparten av världspopulationen är stannfåglar förutom de som häckar i den kallaste nordligaste delarna av utbredningsområdet.",
+        "distribution": "Europa och Asien",
+        "url": "https://sv.wikipedia.org/wiki/Större_hackspett"
+    },
+    "Gräsand": {
+        "name": "Gräsand",
+        "latin": "Anas platyrhynchos",
+        "description": "Gräsand är en välkänd andfågel som är mycket vanlig och vida spridd på stora delar av norra halvklotet. Gräsanden är tillsammans med myskanden ursprunget till tamankan.",
+        "distribution": "Europa, Asien, Nordamerika, delar av Australien och Nya Zeeland",
+        "url": "https://sv.wikipedia.org/wiki/Gräsand"
+    },
+    "Bofink": {
+        "name": "Bofink",
+        "latin": "Fringilla coelebs",
+        "description": "Bofink är en liten tätting som tillhör familjen finkar och som är mycket talrik i Europa.",
+        "distribution": "Europa, västra Asien och nordvästra Afrika",
+        "url": "https://sv.wikipedia.org/wiki/Bofink"
+    }
+}

@@ -1,0 +1,25 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Lucky{% endblock %}
+
+{% block body %}
+
+    <div class="index-main">
+
+        <div class="main-text">
+            <h1>Slumpa fram en fågel</h1>
+            <p><span class="crazy">{{ bird }}</span> <span class="latin">{{ latin }}</span></p>
+
+            <p>{{ description }} <span class="latin">(Text from Wikipedia.)</span></p>
+            <p>Utbredning: {{ distribution }}.</p>
+            <p><a href="{{ url }}">Läs mer om {{ bird }} på Wikipedia!</a></p>
+            <p>Ladda om sidan för att läsa om en ny fågel!</p>
+
+        </div>
+
+        <div class="main-img">
+            <img class="lucky-img" src="{{ asset(imgurl) }}" alt="Bird">
+        </div>
+    </div>
+
+{% endblock %}
