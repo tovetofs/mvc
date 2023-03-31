@@ -1,0 +1,51 @@
+/* GENERAL STYLING */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+}
+
+
+body {
+    line-height: 1.4;
+    background-color: var(--background);
+    color: var(--plaintext);
+    font-family: 'Lora', sans-serif;
+    letter-spacing: 0.5px;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 1.4rem;
+    font-family: 'Petit Formal Script', cursive;
+}
+
+h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1.4rem;
+    font-family: 'Petit Formal Script', cursive;
+}
+
+p {
+    margin-bottom: 1.4rem;
+    font-size: 1rem;
+}
+
+a {
+    color: var(--link);
+}
+
+a:hover {
+    color: var(--hoverlink);
+}
+
+.main {
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-bottom: 2em;
+}

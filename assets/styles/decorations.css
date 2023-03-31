@@ -1,0 +1,41 @@
+/* STYLING FOR DECORATION */
+
+/* Line of circles */
+.line-circles {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle-1 {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: var(--circle);
+    margin: 20px;
+}
+
+.circle-2 {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--circle);
+    margin: 20px;
+}
+
+.circle-3 {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: var(--circle);
+    margin: 20px;
+}
+
+.circle-4 {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--circle);
+    margin: 20px;
+}

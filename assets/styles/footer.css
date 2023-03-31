@@ -1,0 +1,35 @@
+/* STYLING FOR FOOTER */
+
+
+.myfoot {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.small-circle {
+    background-color: var(--circle);
+    border-radius: 50%;
+    margin: 1rem;
+}
+
+.one {
+    width: 15px;
+    height: 15px;
+}
+
+.two {
+    width: 25px;
+    height: 25px;
+}
+
+.three {
+    width: 35px;
+    height: 35px;
+}
+
+.foot-text {
+    color: var(--foottext);
+    font-size: 1.2rem;
+}
