@@ -7,10 +7,8 @@
         <div class="report-head">
             <h1>Redovisning</h1>
         </div>
-        <div class="report-text" id="kmom01">
-            <h2>Kmom01 - Ramverk</h2>
-            <p>Här kommer snart en text om kursmoment 1.</p>
-            
+
+        <div class="report-head">
             <div class="line-circles">
                 <div class="circle-1"></div>
                 <div class="circle-2"></div>
@@ -22,13 +20,39 @@
             </div>
         </div>
 
+        <div class="report-text" id="kmom01">
+            <h2>Kmom01 - Ramverk</h2>
+            <p>Mina förkunskaper inom objektorienterad programmering begränsar sig till det vi 
+                lärde oss i OOPython-kursen.</p>
+            <p>En klass är en mall som man kan använda för att skapa objekt, som alltså blir en instans 
+                av klassen. Ett objekt har properties som är variabler som hör till objektet (som anger 
+                objektets state). Ett objekt har också methods (funktioner) som delas av alla objekt av en viss klass. 
+                Objekt kan användas för inkapsling. Properties och metoder kan vara publika, privata eller 
+                protected.</p>
+            <p>Uppdelningen av koden i report känns bekant med routes och template-filer, men verkar 
+                mycket mer komplext nu än när vi jobbade i express och flask. Vissa saker förstår jag 
+                inte alls som autoloader och use. Namespace förstår jag på ett teoretiskt plan, men inte 
+                hur man ska implementera det. </p>
+            <p>'PHP The right way' tycker jag var ganska svår att förstå. Biten om databaser känns ju 
+                användbar och delarna om säkerhet och testning verkar viktigt. Hur man arbetar med datum 
+                verkar också användbart.</p>
+            <p>Mitt TIL den här veckan är hur man installerar Symfony och hur man skapar en klass i PHP.
+            </p>
+            
+        </div>
 
-        <div class="report-text" id="kmom02">
-            <h2>Kmom02</h2>
-            <p>Här kommer snart en text om kursmoment 1.</p>
+        <div class="report-side">
+            <img class="report-img" src="{{ asset('img/bird1.jpg') }}" alt="Bird">
+            <div class="report-side-text">
+                <p><a href="{{ path('api/quote') }}">Dagens citat (Route api/quote)</a></p>
+            </div>
+            <img class="report-img" src="{{ asset('img/bird2.jpg') }}" alt="Bird">
+            <div class="report-side-text">
+                <p><a href="{{ path('lucky') }}">Lucky (Route lucky)</a></p>
+            </div>
+        </div>
 
-            <p>Här kommer snart en text om kursmoment 1.</p>
-
+        <div class="report-head">
             <div class="line-circles">
                 <div class="circle-1"></div>
                 <div class="circle-2"></div>
@@ -38,6 +62,16 @@
                 <div class="circle-2"></div>
                 <div class="circle-1"></div>
             </div>
+        </div>
+
+        <div class="report-side2">
+            <img class="report-img" src="{{ asset('img/bird3.jpg') }}" alt="Bird">
+        </div>
+
+
+        <div class="report-text2" id="kmom02">
+            <h2>Kmom02</h2>
+            <p>Testtext.</p>
 
         </div>
 

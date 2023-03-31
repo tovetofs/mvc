@@ -18,7 +18,16 @@
             <nav class="navbar2">
                 <div class="onelink"><a href="{{ path('index') }}">Home</a></div>
                 <div class="onelink"><a href="{{ path('about') }}">About</a></div>
-                <div class="onelink"><a href="{{ path('lucky') }}">Lucky</a></div>
+                {# <div class="onelink"><a href="{{ path('lucky') }}">Lucky</a></div> #}
+                <div class="dropdown">
+                    <div class="dropdown-link">
+                        Exercises
+                    </div>
+                    <div class="dropdown-content">
+                        <p><a href="{{ path('lucky') }}" class="dist">Lucky</a></p>
+                        <p><a href="{{ path('api/quote') }}" class="dist">Dagens citat</a></p>
+                    </div>
+                </div>
                 <div class="dropdown">
                     <div class="dropdown-link">
                         <a href="{{ path('report') }}">Report
@@ -33,18 +42,6 @@
                 </div>
             </nav>
             <div class="hero-title"><h1>Min sida i MVC-kursen</h1></div>
-            
-            {# <nav class="navbar">
-                <ul>
-                    <li><span class="nav-title">Min sida i MVC-kursen</span></li>
-                    <li><a href="{{ path('index') }}">Home</a></li>
-                    <li><a href="{{ path('about') }}">About</a></li>
-                    <li><a href="{{ path('report') }}">Report</a></li>
-                    <li><a href="{{ path('lucky') }}">Lucky</a></li>
-                </ul>
-            </nav> #}
-
-            {# <div class="hero-title"><h1>Min sida i MVC-kursen</h1></div> #}
 
             <div class="hero-image">
                 <img src="{{ asset('img/background3.jpg') }}" alt="Landscape">

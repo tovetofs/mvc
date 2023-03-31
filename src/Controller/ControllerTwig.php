@@ -16,16 +16,12 @@ class ControllerTwig extends AbstractController
         $str = file_get_contents('json/birds.json');
         $json = json_decode($str, true);
         $number = random_int(0, 6);
-        $imgurl = 'img/bird' . $number . '.jpg';
-        $birds = array('Blåmes', 'Kungsfiskare', 'Rödhake', 'Nötväcka', 'Gröngöling', 'Större hackspett',
-        'Gräsand', 'Bofink');
-        $thebird = $birds[$number];
-        $jsonbird = $json[$thebird];
+        $jsonbird = $json[$number];
 
         $data = [
             'number' => $number,
-            'imgurl' => $imgurl,
-            'bird' => $thebird,
+            'imgurl' => $jsonbird['imageurl'],
+            'bird' => $jsonbird['name'],
             'description' => $jsonbird['description'],
             'url' => $jsonbird['url'],
             'distribution' => $jsonbird['distribution'],
@@ -53,19 +49,20 @@ class ControllerTwig extends AbstractController
         return $this->render('report.html.twig');
     }
 
-    #[Route("/api/quote")]
+    #[Route("/api/quote", name: "api/quote")]
     public function jsonNumber(): Response
     {
         date_default_timezone_set('Europe/Stockholm');
         $number = random_int(0, 4);
-        $quotes = ['Assumption is the mother of all fuckups.', 'Elementary, my dear Watson.',
-        'I think therefore I am.', 'Houston we hava a problem.', 'To be or not to be, that is the question'];
+        $str = file_get_contents('json/quotes.json');
+        $json = json_decode($str, true);
+        $jsonquote = $json[$number];
         $today = date("Y-m-d H:i:s");
         $timestamp = time();
 
         $data = [
             'random number' => $number,
-            'random quote' => $quotes[$number],
+            'random quote' => $jsonquote['quote'],
             'date' => $today,
             'timestamp' => $timestamp
         ];
