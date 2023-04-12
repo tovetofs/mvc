@@ -7,30 +7,27 @@
         <div class="main-card">
             <h1>Mina kort</h1>
 
-            <p>
-                {% if remaining_cards %}
-                    Återstående kort: {{ remaining_cards }}
-                {% endif %}
-            </p>
-
             <div class="display-deck">
+
+                {% if remaining_cards %}
+                    <div class="deck">
+                        <span class="black">{{ remaining_cards }}</span>
+                    </div>
+                {% endif %}
+
                 {% for card, details in my_deck %}
                     <div class="one-card">
                         <span class="{{ details.color }}">
-                            {{ details.suit|raw }}<br>
 
-                            {% if details.rank == 1 %}
-                            A
-                            {% else %}
+                            {# {{ details.suit|raw }}<br> #}
+                            <i class="{{ details.suit }}"></i><br>
                             {{ details.rank|e }}
                             {# {{ details.value|e }} #}
-                            {% endif %}
 
                         </span> 
                     </div>
                 {% endfor %}
             </div>
-            {# <img src="{{ asset('img/hearts.svg') }}"> #}
 
         </div>
 

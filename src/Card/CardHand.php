@@ -22,7 +22,7 @@ class CardHand
     {
         $values = [];
         foreach ($this->hand as $card) {
-            $values[$card->displayCard()] = array("suit"=>$card->showUTF(), "rank"=>$card->showRank(),
+            $values[$card->displayCard()] = array("suit"=>$card->showSuit(), "rank"=>$card->showRank(),
                 "color"=>$card->getColor());
         }
         return $values;

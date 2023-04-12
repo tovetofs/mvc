@@ -5,19 +5,36 @@
 {% block body %}
     <div class="index-card">
         <h2>Struktur på klasser</h2>
-        <p>Jag skapade fyra klasser: Card, CardGraphic, CardHand och DeckOfCards. Jag valde att låta
-            CardGraphic ärva från Card. Förhållandet mellan Card och CardHand respektive DeckOfCards
-            borde bli komposition.
+
+        <h3>Card</h3>
+        <p>Basklassen för ett spelkort. Innehåller protected properties i form av suit, rank och value.
+            Suit och rank skickas in som argument till konstruktorn när
+            kortet skapas. Innehåller value som int, vilket behövdes för att kunna sortera korten. Det finns
+            publika metoder för att ta fram suit, rank, value och även color.
         </p>
-        <p>Card har tre stycken protected variabler, färg, värde (för att kunna sortera korten)
-            och rank (siffra/bokstav). CardGraphic har endast en statisk variabel, en array med koderna
-            till utf8-tecknen och en metod för att visa rätt utf8-tecken.
+
+        <h3>CardGraphic</h3>
+        <p>Subklass till Card. Innehåller en statisk variabel, en array med de fyra utf8-tecknen och en metod
+            för att visa rätt tecken. Visade sig att den här klassen inte behövdes för att visa ett 
+            utf8-tecken, men den kanske kan vara användbar framöver om jag vill använda bilder istället.
         </p>
-        <p>När en ny kortlek skapas, skapar den korten utifrån en json-fil i konstruktorn. Varje
-            kort skapas med färg och rank som argument och läggs sedan till i en array i kortleksobjektet.
+
+        <h3>DeckOfCards</h3>
+        <p>De 52 spelkorten skapas i kortlekens konstruktor och sparas i en array i kortleksobjektet. 
+            Det finns metoder för att sortera och blanda kortleken samt dra kort och visa antal 
+            återstående kort. Det finns en metod som visar
+            upp spelkorten och en som visar dem i ett format som passar för JSON. Förhållandet mellan Card
+            och DeckOfCards borde bli komposition, i det här fallet så existerar ju bara korten inuti ett
+            kortleksobjekt.
         </p>
-        <p>När en ny hand skapas så skickas korten som argument till kontstruktorn
-            i form av en array. Korten sparas sedan i en array i handobjektet.
+
+        <h3>CardHand</h3>
+        <p>CardHand tar emot en array med spelkort i konstruktorn (det kan vara de som dras från 
+            kortleken). Korten sparas som en array i handobjektet. Det finns metoder för att visa upp 
+            handen och en metod för att lägga till ett enskilt kort, som kanske blir användbart sedan.
+            Förhållandet mellan Card och CardHand borde bli aggregation, man kan tänka sig att 
+            korten återvänder till kortleksobjektet när de lämnar handen och alltså kan de existera utanför
+            handobjektet.
         </p>
 
         <h2>UML-diagram</h2>

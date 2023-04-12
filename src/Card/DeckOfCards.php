@@ -12,7 +12,7 @@ class DeckOfCards
         $json = json_decode($str, true);
         foreach ($json as $suit => $val) {
             foreach ($val as $rank => $utf) {
-                $card = new CardGraphic($suit, $rank);
+                $card = new Card($suit, $rank);
                 $this->deck[] = $card;
             }
         }
@@ -32,7 +32,7 @@ class DeckOfCards
     {
         $values = [];
         foreach ($this->deck as $card) {
-            $values[$card->displayCard()] = array("suit"=>$card->showUTF(), "rank"=>$card->showRank(),
+            $values[$card->displayCard()] = array("suit"=>$card->showSuit(), "rank"=>$card->showRank(),
                 "color"=>$card->getColor(), "value"=>$card->showValue());
         }
         return $values;

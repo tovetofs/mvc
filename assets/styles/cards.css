@@ -29,7 +29,22 @@
     justify-content: center;
     align-items: center;
     margin: 1rem;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+    /* box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2), 0 0 20px 0 rgba(0, 0, 0, 0.19); */
+    box-shadow: 8px 8px 5px 0 rgba(0, 0, 0, 0.1);
+}
+
+.deck {
+    width: 100px;
+    height: 130px;
+    background-color: var(--hoverlink);
+    border: 1px dotted lightgray;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    box-shadow: 8px 8px 5px 0 rgba(0, 0, 0, 0.1);
 }
 
 .display-deck {
@@ -41,4 +56,20 @@
 
 .main-card {
     margin-top: 1.5rem;
+}
+
+.black .clubs::after {
+    content: "\2663";
+}
+
+.red .diamonds::after {
+    content: "\2666";
+}
+
+.red .hearts::after {
+    content: "\2665";
+}
+
+.black .spades::after {
+    content: "\2660";
 }
