@@ -1,0 +1,11 @@
+/* STYLING FOR API LANDING PAGE */
+
+.card-button {
+    background-color: var(--background);
+    border: none;
+    font-size: 1rem;
+    text-decoration: underline;
+    color: var(--link);
+    font-family: 'Lora', sans-serif;
+}
+
