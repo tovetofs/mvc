@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </head>
+    <body>
+        <div class="cardheader">
+            <nav class="navbar2-card">
+                <div class="onelink"><a href="{{ path('index') }}">Home</a></div>
+                <div class="onelink"><a href="{{ path('about') }}">About</a></div>
+                {# <div class="onelink"><a href="{{ path('lucky') }}">Lucky</a></div> #}
+                <div class="onelink"><a href="{{ path('api') }}">Api routes</a></div>
+                <div class="dropdown">
+                    <div class="dropdown-link">
+                        Exercises
+                    </div>
+                    <div class="dropdown-content">
+                        <p><a href="{{ path('lucky') }}" class="dist">Kmom01 - Lucky</a></p>
+                        <p><a href="{{ path('card') }}" class="dist">Kmom02 - Card</a></p>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <div class="dropdown-link">
+                        <a href="{{ path('report') }}">Report
+                        </a>
+                    </div>
+                    <div class="dropdown-content">
+                        <p><a class="dist" href="{{ path('report') }}#kmom01">Kmom01</a></p>
+                        <p><a class="dist" href="{{ path('report') }}#kmom02">Kmom02</a></p>
+                        <p><a class="dist" href="{{ path('report') }}#kmom03">Kmom03</a></p>
+                        <p><a class="dist" href="{{ path('report') }}#kmom04">Kmom04</a></p>
+                    </div>
+                </div>
+            </nav>
+            <div class="hero-title-card"><h1>Min sida i MVC-kursen</h1></div>
+
+        </div>
+
+        <main class="main">
+            <div class="cardnav">
+                <p><a class="card-nav" href="{{ path('card') }}">Card</a></p>
+                <p><a class="card-nav" href="{{ path('deck') }}">Deck</a></p>
+                <p><a class="card-nav" href="{{ path('shuffle') }}">Shuffle</a></p>
+                <p><a class="card-nav" href="{{ path('draw') }}">Draw</a></p>
+                <p><a class="card-nav" href="{{ relative_path("/card/deck/draw/10") }}">Draw 10</a></p>
+            </div>
+
+            {% block body %}{% endblock %}
+
+        </main>
+
+        <footer class="myfoot">
+            <div class="small-circle one"></div>
+            <div class="small-circle two"></div>
+            <div class="small-circle three"></div>
+            <div class="foot-text">(C) Tove 2023</div>
+            <div class="small-circle three"></div>
+            <div class="small-circle two"></div>
+            <div class="small-circle one"></div>
+        </footer>
+    </body>
+</html>

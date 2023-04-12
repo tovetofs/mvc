@@ -1,0 +1,49 @@
+{% extends "base.html.twig" %}
+
+{% block title %}About{% endblock %}
+
+{% block body %}
+    <div class="index-main">
+        <div class="main-text">
+            <h1>Api routes</h1>
+            <p>Här kan du se alla JSON routes på webbplatsen.</p>
+            
+            <h3>Kmom01</h3>
+            <p><a href="{{ path('api/quote') }}" class="dist">Dagens citat</a> <br>
+            Visar ett slumpvis utvalt citat samt dagens datum.</p>
+
+            <h3>Kmom02</h3>
+            <p><a href="{{ path('api/deck') }}" class="dist">Kortleken</a> <br>
+            Visar hela kortleken sorterad per färg och värde. Skapar kortleken på nytt.</p>
+            <p>
+            <form action="{{ path('api/deck/shuffle') }}" method="post">
+                <input class="card-button" type="submit" value="Shuffle">
+            </form>
+            Blandar kortleken. Visar resterande kort.
+            </p>
+            <p>
+            <form action="{{ path('api/deck/draw') }}" method="post">
+                <input class="card-button" type="submit" value="Dra ett kort">
+            </form>
+            </p>
+            <p>
+            <form action="{{ relative_path("/api/deck/draw/5") }}" method="post">
+                <input class="card-button" type="submit" value="Dra fem kort">
+            </form>
+            </p>
+            <p>
+            <form action="{{ relative_path("/api/deck/draw/10") }}" method="post">
+                <input class="card-button" type="submit" value="Dra tio kort">
+            </form>
+            </p>
+
+        </div>
+
+        <div class="main-img">
+            <img class="lucky-img" src="{{ asset('img/bird1.jpg') }}" alt="Bird">
+        </div>
+
+    </div>
+    
+    
+{% endblock %}

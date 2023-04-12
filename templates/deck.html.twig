@@ -1,0 +1,42 @@
+{% extends "cardbase.html.twig" %}
+
+{% block title %}About{% endblock %}
+
+{% block body %}
+    <div class="index-card">
+        <div class="main-card">
+            <h1>Mina kort</h1>
+
+            <p>
+                {% if remaining_cards %}
+                    Återstående kort: {{ remaining_cards }}
+                {% endif %}
+            </p>
+
+            <div class="display-deck">
+                {% for card, details in my_deck %}
+                    <div class="one-card">
+                        <span class="{{ details.color }}">
+                            {{ details.suit|raw }}<br>
+
+                            {% if details.rank == 1 %}
+                            A
+                            {% else %}
+                            {{ details.rank|e }}
+                            {# {{ details.value|e }} #}
+                            {% endif %}
+
+                        </span> 
+                    </div>
+                {% endfor %}
+            </div>
+            {# <img src="{{ asset('img/hearts.svg') }}"> #}
+
+        </div>
+
+
+
+    </div>
+    
+    
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "cardbase.html.twig" %}
+
+{% block title %}About{% endblock %}
+
+{% block body %}
+    <div class="index-card">
+        <h2>Struktur på klasser</h2>
+        <p>Jag skapade fyra klasser: Card, CardGraphic, CardHand och DeckOfCards. Jag valde att låta
+            CardGraphic ärva från Card. Förhållandet mellan Card och CardHand respektive DeckOfCards
+            borde bli komposition.
+        </p>
+        <p>Card har tre stycken protected variabler, färg, värde (för att kunna sortera korten)
+            och rank (siffra/bokstav). CardGraphic har endast en statisk variabel, en array med koderna
+            till utf8-tecknen och en metod för att visa rätt utf8-tecken.
+        </p>
+        <p>När en ny kortlek skapas, skapar den korten utifrån en json-fil i konstruktorn. Varje
+            kort skapas med färg och rank som argument och läggs sedan till i en array i kortleksobjektet.
+        </p>
+        <p>När en ny hand skapas så skickas korten som argument till kontstruktorn
+            i form av en array. Korten sparas sedan i en array i handobjektet.
+        </p>
+
+        <h2>UML-diagram</h2>
+
+        <img src="{{ asset('img/uml.png') }}" alt="UML diagram">
+
+    </div>
+    
+    
+{% endblock %}
