@@ -76,12 +76,40 @@
             <div class="report-side-text">
                 <p><a href="{{ path('card') }}">Kortspelet</a></p>
             </div>
+            <img class="report-img" src="{{ asset('img/bird5.jpg') }}" alt="Bird">
         </div>
 
 
         <div class="report-text2" id="kmom02">
             <h2>Kmom02 - Objektorientering</h2>
-            <p>Testtext.</p>
+            <p>Arv innebär en form av specialisering. En subklass kommer att ärva alla publika och
+                protected metoder och properties från en basklass och kan i tillägg till det ha
+                egna metoder och properties. Från basklassen kommer man däremot inte åt metoder och
+                properties i subklassen. Nyckelordet 'extends' används i PHP för att visa att en
+                klass ärver från en annan.</p>
+            <p>Komposition innebär att en klass innehåller en annan klass,  t ex ett hus innehåller
+                rum och dessa kan inte existera utanför huset.</p>
+            <p>Interface innebär en form av kontrakt. Interfacet visar vilka metoder en klass ska
+                implementera, alla metoder som finns i interfacet lovar man alltså att uppfylla.
+                Nyckelordet 'interface' används för att specificera interfacet och 'implements'
+                används av de klasser som vill använda interfacet.</p>
+            <p>Trait innebär att man skapar moduler av kod som kan användas av flera klasser, det kan
+                vara metoder och medlemsvariabler. Trait kan man använda istället för multipelt arv,
+                som inte går att använda i PHP. De deklareras med nyckelordet 'trait' och inuti klassen
+                som ska använda ett visst trait skriver man 'use TraitName'.</p>
+            <p>Till uppgiften skapade jag de fyra klasser som rekommenderades. Jag är nöjd med klasserna
+                jag skapade, jag tycker att de blev ganska lättöverskådliga. Använde en JSON-fil för att
+                hålla information om korten som ska skapas och den användes sedan i DeckOfCards
+                konstruktor för att skapa korten, men det finns kanske något bättre sätt att lösa det
+                på. En svårighet var att skriva ut utf8-tecknet på sidan, skapade klassen CardGraphic
+                för att lösa det, men såg att det fanns en bättre lösning i guiden som jag använde
+                istället. Framöver skulle jag kunna använda CardGraphic om jag vill implementera
+                bilder. En annan svårighet var att sortera korten i rätt ordning, löste det genom att
+                skapa medlemsvariabeln value som är en siffra. </p>
+            <p>Flödesdiagram och pseudokod använde jag inte för den här uppgiften, men när uppgifterna
+                blir mer komplexa tror jag det är väldigt användbart.</p>
+            <p>Mitt TIL den här veckan är hur arv, trait och interface fungerar i PHP och hur man
+                använder sessionen i symfony.</p>
 
         </div>
 
@@ -103,7 +131,7 @@
         </div>
 
         <div class="report-side">
-            <img class="report-img" src="{{ asset('img/bird5.jpg') }}" alt="Bird">
+            <img class="report-img" src="{{ asset('img/bird6.jpg') }}" alt="Bird">
         </div>
 
     </div>
