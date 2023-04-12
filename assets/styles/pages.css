@@ -70,6 +70,10 @@
     font-size: 1.1rem;
 }
 
+.report-text2 p {
+    font-size: 1.1rem;
+}
+
 .report-side {
     grid-column: 4/5;
     padding: 1rem;
@@ -83,6 +87,10 @@
 
 .report-side-text {
     text-align: center;
+}
+
+.report-side-text a {
+    font-size: 1.2rem;
 }
 
 /* For alternating column */
