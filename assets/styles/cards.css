@@ -1,7 +1,7 @@
 /* STYLING FOR CARDS */
 
 
-.red {
+.diamondscard, .heartscard {
     color: red;
     font-size: 3rem;
     font-weight: bold;
@@ -10,7 +10,7 @@
     line-height: 1em;
 }
 
-.black {
+.spadescard, .clubscard {
     color: black;
     font-size: 3rem;
     font-weight: bold;
@@ -58,18 +58,18 @@
     margin-top: 1.5rem;
 }
 
-.black .clubs::after {
+.card .clubs::after {
     content: "\2663";
 }
 
-.red .diamonds::after {
+.card .diamonds::after {
     content: "\2666";
 }
 
-.red .hearts::after {
+.card .hearts::after {
     content: "\2665";
 }
 
-.black .spades::after {
+.card .spades::after {
     content: "\2660";
 }

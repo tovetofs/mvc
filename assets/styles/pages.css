@@ -26,8 +26,17 @@
     padding: 1rem;
 }
 
+.side-img {
+    grid-column: 3/4;
+    padding: 1rem;
+}
+
 .main-img img {
     border-radius: 50%;
+}
+
+img {
+    max-width: 100%;
 }
 
 /* For alternating columns */
