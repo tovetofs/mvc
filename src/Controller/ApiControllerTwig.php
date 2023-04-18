@@ -40,14 +40,14 @@ class ApiControllerTwig extends AbstractController
 
     #[Route("/api/deck", name: "api/deck", methods: ['GET'])]
     public function jsonDeck(
-        Request $request,
+        // Request $request,
         SessionInterface $session
     ): Response {
-        $my_deck = new DeckOfCards();
-        $session->set("my_deck", $my_deck);
+        $myDeck = new DeckOfCards();
+        $session->set("my_deck", $myDeck);
 
         $data = [
-            "my_deck" => $my_deck->showJsonDeck(),
+            "my_deck" => $myDeck->showJsonDeck(),
         ];
 
         $response = new JsonResponse($data);
@@ -60,20 +60,19 @@ class ApiControllerTwig extends AbstractController
 
     #[Route("/api/deck/shuffle", name: "api/deck/shuffle", methods: ['POST'])]
     public function jsonShuffle(
-        Request $request,
+        // Request $request,
         SessionInterface $session
     ): Response {
+        $myDeck = new DeckOfCards();
         if ($session->get("my_deck")) {
-            $my_deck = $session->get("my_deck");
-        } else {
-            $my_deck = new DeckOfCards();
+            $myDeck = $session->get("my_deck");
         }
 
-        $my_deck->shuffleDeck();
-        $session->set("my_deck", $my_deck);
+        $myDeck->shuffleDeck();
+        $session->set("my_deck", $myDeck);
 
         $data = [
-            "my_deck" => $my_deck->showJsonDeck(),
+            "my_deck" => $myDeck->showJsonDeck(),
         ];
 
         $response = new JsonResponse($data);
@@ -86,22 +85,21 @@ class ApiControllerTwig extends AbstractController
 
     #[Route("/api/deck/draw", name: "api/deck/draw", methods: ['POST'])]
     public function jsonDrawOne(
-        Request $request,
+        // Request $request,
         SessionInterface $session
     ): Response {
+        $myDeck = new DeckOfCards();
         if ($session->get("my_deck")) {
-            $my_deck = $session->get("my_deck");
-        } else {
-            $my_deck = new DeckOfCards();
+            $myDeck = $session->get("my_deck");
         }
 
-        $my_deck->shuffleDeck();
-        $my_hand = new CardHand($my_deck->drawCards());
-        $session->set("my_deck", $my_deck);
+        $myDeck->shuffleDeck();
+        $myHand = new CardHand($myDeck->drawCards());
+        $session->set("my_deck", $myDeck);
 
         $data = [
-            "my_hand" => $my_hand->showJsonDeck(),
-            "remaining_cards" => $my_deck->remainingCards(),
+            "my_hand" => $myHand->showJsonDeck(),
+            "remaining_cards" => $myDeck->remainingCards(),
         ];
 
         $response = new JsonResponse($data);
@@ -115,27 +113,50 @@ class ApiControllerTwig extends AbstractController
     #[Route("/api/deck/draw/{number<\d+>}", name: "api/deck/draw/nbr", methods: ['POST'])]
     public function jsonDrawSeveral(
         int $number,
-        Request $request,
+        // Request $request,
         SessionInterface $session
     ): Response {
+        $myDeck = new DeckOfCards();
         if ($session->get("my_deck")) {
-            $my_deck = $session->get("my_deck");
-        } else {
-            $my_deck = new DeckOfCards();
+            $myDeck = $session->get("my_deck");
         }
 
-        $my_deck->shuffleDeck();
-        $my_hand = new CardHand($my_deck->drawCards($number));
-        $session->set("my_deck", $my_deck);
+        $myDeck->shuffleDeck();
+        $myHand = new CardHand($myDeck->drawCards($number));
+        $session->set("my_deck", $myDeck);
 
         $data = [
-            "my_hand" => $my_hand->showJsonDeck(),
-            "remaining_cards" => $my_deck->remainingCards(),
+            "my_hand" => $myHand->showJsonDeck(),
+            "remaining_cards" => $myDeck->remainingCards(),
         ];
 
         $response = new JsonResponse($data);
         $response->setEncodingOptions(
             $response->getEncodingOptions() | JSON_PRETTY_PRINT
+        );
+        return $response;
+    }
+
+
+    #[Route("/api/game", name: "api/game", methods: ['GET'])]
+    public function jsonGame(
+        // Request $request,
+        SessionInterface $session
+    ): Response {
+        // $my_deck = new DeckOfCards();
+        $myScore = $session->get("game_score");
+        $gamePlan = $session->get("game_plan");
+
+        $data = [
+            "row_score" => $myScore->rowSums(),
+            "col_score" => $myScore->colSums(),
+            "total_score" => $myScore->totalSum(),
+            "game_plan" => $gamePlan->showJsonBoard(),
+        ];
+
+        $response = new JsonResponse($data);
+        $response->setEncodingOptions(
+            $response->getEncodingOptions() | JSON_PRETTY_PRINT 
         );
         return $response;
     }

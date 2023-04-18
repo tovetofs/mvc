@@ -25,20 +25,19 @@ class CardControllerTwig extends AbstractController
 
     #[Route("/card/deck", name: "deck")]
     public function deck(
-        Request $request,
+        // Request $request,
         SessionInterface $session
     ): Response {
+        $myDeck = new DeckOfCards();
         if ($session->get("my_deck")) {
-            $my_deck = $session->get("my_deck");
-        } else {
-            $my_deck = new DeckOfCards();
+            $myDeck = $session->get("my_deck");
         }
 
-        $my_deck->sortDeck();
-        $session->set("my_deck", $my_deck);
+        $myDeck->sortDeck();
+        $session->set("my_deck", $myDeck);
 
         $data = [
-            "my_deck" => $my_deck->showDeck(),
+            "my_deck" => $myDeck->showDeck(),
             "remaining_cards" => "",
         ];
 
@@ -48,15 +47,15 @@ class CardControllerTwig extends AbstractController
 
     #[Route("/card/deck/shuffle", name: "shuffle")]
     public function shuffle(
-        Request $request,
+        // Request $request,
         SessionInterface $session
     ): Response {
-        $my_deck = new DeckOfCards();
-        $my_deck->shuffleDeck();
-        $session->set("my_deck", $my_deck);
+        $myDeck = new DeckOfCards();
+        $myDeck->shuffleDeck();
+        $session->set("my_deck", $myDeck);
 
         $data = [
-            "my_deck" => $my_deck->showDeck(),
+            "my_deck" => $myDeck->showDeck(),
             "remaining_cards" => "",
         ];
 
@@ -66,22 +65,21 @@ class CardControllerTwig extends AbstractController
 
     #[Route("/card/deck/draw", name: "draw")]
     public function draw(
-        Request $request,
+        // Request $request,
         SessionInterface $session
     ): Response {
+        $myDeck = new DeckOfCards();
         if ($session->get("my_deck")) {
-            $my_deck = $session->get("my_deck");
-        } else {
-            $my_deck = new DeckOfCards();
+            $myDeck = $session->get("my_deck");
         }
 
-        $my_deck->shuffleDeck();
-        $my_hand = new CardHand($my_deck->drawCards());
-        $session->set("my_deck", $my_deck);
+        $myDeck->shuffleDeck();
+        $myHand = new CardHand($myDeck->drawCards());
+        $session->set("my_deck", $myDeck);
 
         $data = [
-            "my_deck" => $my_hand->showHand(),
-            "remaining_cards" => $my_deck->remainingCards(),
+            "my_deck" => $myHand->showHand(),
+            "remaining_cards" => $myDeck->remainingCards(),
         ];
 
         return $this->render('deck.html.twig', $data);
@@ -91,26 +89,25 @@ class CardControllerTwig extends AbstractController
     #[Route("/card/deck/draw/{number<\d+>}", name: "drawnumber")]
     public function drawnumber(
         int $number,
-        Request $request,
+        // Request $request,
         SessionInterface $session
     ): Response {
         if ($number > 52) {
             throw new \Exception("Can not draw more than 52 cards!");
         }
 
+        $myDeck = new DeckOfCards();
         if ($session->get("my_deck")) {
-            $my_deck = $session->get("my_deck");
-        } else {
-            $my_deck = new DeckOfCards();
+            $myDeck = $session->get("my_deck");
         }
 
-        $my_deck->shuffleDeck();
-        $my_hand = new CardHand($my_deck->drawCards($number));
-        $session->set("my_deck", $my_deck);
+        $myDeck->shuffleDeck();
+        $myHand = new CardHand($myDeck->drawCards($number));
+        $session->set("my_deck", $myDeck);
 
         $data = [
-            "my_deck" => $my_hand->showHand(),
-            "remaining_cards" => $my_deck->remainingCards(),
+            "my_deck" => $myHand->showHand(),
+            "remaining_cards" => $myDeck->remainingCards(),
         ];
 
         return $this->render('deck.html.twig', $data);
