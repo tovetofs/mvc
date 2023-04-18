@@ -1,0 +1,89 @@
+{% extends "gamebase.html.twig" %}
+
+{% block title %}Deck of cards{% endblock %}
+
+{% block body %}
+    <div class="index-card">
+        
+        <form action="{{ path('game/place') }}" method="post">
+        <div class="main-game">
+
+            <div class="game-score">
+                <div class="game-plan">
+                    {% for row, col in game_plan %}
+                        {% for key, val in col %}
+                            {% if val %}
+                                <div class="play-card" id="{{ row }} {{ key }}">
+                                    <span class="{{ val.suit }}card card">
+                                        <i class="{{ val.suit }}"></i><br>
+                                        {{ val.rank }}
+                                    </span>
+                                </div>
+                            {% else %}
+                                <input class="radio" type="radio" name="place" id="{{ row }}{{ key }}" checked value="{{ row }}, {{ key }}">
+                                <label class="empty alias" for="{{ row }}{{ key }}">
+                                </label>
+                                
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+                <div class="score-bottom">
+                    {% for col in col_score %}
+                        <div class="bottom-box">
+                            {{ col }}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="score-right">
+                {% for row in row_score %}
+                <div class="score-box">
+                    {{ row }}
+                </div>
+                {% endfor %}
+            </div>
+            
+
+            <div class="right-game">
+                <h1>Poker squares</h1>
+                <p>Välj var kortet ska läggas!</p>
+                <div class="right-cards">
+                    <div class="play-card stack">
+                        <span class="hej"></span>
+                    </div>
+                    <div class="play-card">
+                        <span class="{{ my_card.suit }}card card">
+                            <i class="{{ my_card.suit }}"></i><br>
+                            {{ my_card.rank }}
+                        </span>
+                    </div>
+                </div>
+
+                {% if played_cards < 25 %}
+                <p>
+                    <input class="game-submit" type="submit" value="Välj ruta">
+                </p>
+                {% else %}
+                <p>
+                    {% if win %}
+                    <h3 class="points">Grattis! Du vann!</h3>
+                    {% else %}
+                    <p>Tyvärr, du förlorade!</p>
+                    {% endif %}
+                </p>
+                {% endif %}
+
+                <h3 class="points">Total poäng: {{ total }}</h3>
+
+            </div>
+
+        </div>
+        </form>
+
+
+
+    </div>
+    
+    
+{% endblock %}

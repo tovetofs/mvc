@@ -1,0 +1,64 @@
+{% extends "gamebase.html.twig" %}
+
+{% block title %}Deck of cards{% endblock %}
+
+{% block body %}
+    <div class="index-main">
+        <div class="main-text">
+            <h2>Poker squares</h2>
+            <h3>Flödesdiagram</h3>
+            <p>Flödesschema som representerar metoden flush i GameRules-klassen. Testar om alla 
+                korten är av samma färg. Se till höger.
+            </p>
+
+            <h3>Pseudokod</h3>
+            <p>Pseudokod för delen som går igenom korten i varje rad och kolumn på spelplanen och testar
+                ifall de stämmer in på någon av av pokerhänderna.
+            </p>
+            <p>
+                <div class="pseudo">
+                <code><pre>
+FOR EACH row of cards on game board
+    FOR EACH rule in point system
+        Check if rule applies
+        IF rule applies
+            GET score
+        ENDIF
+    ENDFOR
+    ADD score to row result array
+END FOR
+FOR EACH column of cards on game board
+    FOR EACH rule in point system
+        Check if rule applies
+        IF rule applies
+            GET score
+        ENDIF
+    ENDFOR
+    ADD score to column result array
+END FOR </pre>
+            </code>
+            </div>
+            </p>
+            <h3>Klasser</h3>
+            <h4>GamePlan</h4>
+            <p>Klass som ritar ut spelplanen. Skapar en multidimensionell array med slottar för varje
+                ruta på spelplanen. När man placerar ett kort läggs det till i arrayn.
+            </p>
+            <h4>ScoreBoard</h4>
+            <p>Klass som håller poängställningen. Loopar igenom rader och kolumner, undersöker
+                vilka regler som kan appliceras och räknar ut poängen.
+            </p>
+            <h4>GameRules</h4>
+            <p>Klass som håller reglerna för de olika pokerhänderna.</p>
+
+        </div>
+        <div class="side-img">
+            <img src="{{ asset('img/flowchart.jpg') }}" alt="Flowchart">
+            <p><i>Flow chart for Flush method. </i></p>
+        </div>
+
+
+    </div>
+    
+    
+{% endblock %}

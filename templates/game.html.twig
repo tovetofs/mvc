@@ -1,0 +1,106 @@
+{% extends "gamebase.html.twig" %}
+
+{% block title %}Deck of cards{% endblock %}
+
+{% block body %}
+    <div class="index-main">
+        <div class="main-text">
+
+        
+        <h2>Poker squares</h2>
+
+        <h3>Starta spelet</h3>
+
+            <form action="{{ path('game/init') }}" method="post">
+                <p>
+                    <input type="radio" name="system" value="Am" id="Am">
+                    <label for="Am">Amerikansk poängräkning</label>
+                </p>
+                <p>
+                    <input type="radio" name="system" value="Eng" id="Eng">
+                <label for="Eng">Engelsk poängräkning</label><br>
+                </p>
+                <p>
+                    <input class="start-btn" type="submit" value="Starta spelet!">
+                </p>
+            </form>
+
+        <h3>Regler</h3>
+        <p>
+            Poker squares är ett patiensspel där det gäller att bygga de bästa poker-händerna.
+        </p>
+        <p>
+            Korten läggs ut ett i taget på en 5x5 kort stor spelplan. När ett kort har lagts på 
+            spelplanen kan det inte längre flyttas. När alla 25 kort är utlagda summeras poängen för 
+            fem raderna samt fem kolumnerna. Man får poäng enligt nedan för de olika pokerhänderna.
+            Välj mellan amerikansk eller engelsk poängberäkning.
+        </p>
+
+        <table class="rules-table">
+            <tr>
+                <th>Poker hand</th>
+                <th>Amerikansk</th>
+                <th>Engelsk</th>
+            </tr>
+            <tr>
+                <td>Royal flush</td>
+                <td>100</td>
+                <td>30</td>
+            </tr>
+            <tr>
+                <td>Straight flush</td>
+                <td>75</td>
+                <td>30</td>
+            </tr>
+            <tr>
+                <td>Four Of A Kind</td>
+                <td>50</td>
+                <td>16</td>
+            </tr>
+            <tr>
+                <td>Full House</td>
+                <td>25</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td>Flush</td>
+                <td>20</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>Straight</td>
+                <td>15</td>
+                <td>12</td>
+            </tr>
+            <tr>
+                <td>Three Of A Kind</td>
+                <td>10</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>Two Pairs</td>
+                <td>5</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>Pair</td>
+                <td>2</td>
+                <td>1</td>
+            </tr>
+        </table>
+
+
+        </div>
+
+        <div class="main-img">
+            
+            <h3>Dokumentation</h3>
+            <p><a href="{{ path('game/doc') }}">Dokumentation om spelet.</a></p>
+
+            <img class="lucky-img" src="{{ asset('img/bird8.jpg') }}" alt="Bird">
+        </div>
+
+    </div>
+    
+    
+{% endblock %}
