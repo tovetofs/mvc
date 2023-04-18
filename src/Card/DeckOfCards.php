@@ -16,7 +16,8 @@ class DeckOfCards
         foreach ($json as $suit => $val) {
             $keys = array_keys($val);
             foreach ($keys as $key) {
-                $card = new CardGraphic($suit, $key);
+                $rank = (string)$key;
+                $card = new CardGraphic($suit, $rank);
                 $this->deck[] = $card;
             }
             // foreach ($val as $rank => $utf) {
