@@ -4,11 +4,11 @@ namespace App\Card;
 
 class Card
 {
-    protected $suit;
+    protected string $suit;
 
-    protected $value;
+    protected int $value;
 
-    protected $rank;
+    protected string $rank;
 
     public function __construct(string $suit, string $rank)
     {
@@ -28,7 +28,7 @@ class Card
                 $this->value = 13;
                 break;
             default:
-                $this->value = $this->rank;
+                $this->value = (int)$this->rank;
         }
     }
 
@@ -52,22 +52,18 @@ class Card
         return $this->value;
     }
 
-    public function getColor(): string
+    public function suit(): string
     {
-        switch ($this->suit) {
-            case 'spades':
-                $this->color = 'black';
-                break;
-            case 'clubs':
-                $this->color = 'black';
-                break;
-            case 'hearts':
-                $this->color = 'red';
-                break;
-            case 'diamonds':
-                $this->color = 'red';
-                break;
-        }
-        return $this->color;
+        return $this->suit;
+    }
+
+    public function rank(): string
+    {
+        return $this->rank;
+    }
+
+    public function value(): int
+    {
+        return $this->value;
     }
 }

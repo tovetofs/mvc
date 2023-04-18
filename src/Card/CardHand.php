@@ -4,11 +4,18 @@ namespace App\Card;
 
 class CardHand
 {
-    private $hand = [];
+    /**
+     * @var array<mixed>
+     */
+    private array $hand = [];
 
+    /**
+     * @param array<Card> $drawnCards
+     */
     public function __construct(array $drawnCards)
     {
         foreach ($drawnCards as $card) {
+            // $drawnCards as Card
             $this->hand[] = $card;
         }
     }
@@ -18,16 +25,21 @@ class CardHand
         $this->hand[] = $card;
     }
 
+    /**
+    * @return array<mixed>
+    */
     public function showHand(): array
     {
         $values = [];
         foreach ($this->hand as $card) {
-            $values[$card->displayCard()] = array("suit"=>$card->showSuit(), "rank"=>$card->showRank(),
-                "color"=>$card->getColor());
+            $values[$card->displayCard()] = array("suit"=>$card->showSuit(), "rank"=>$card->showRank());
         }
         return $values;
     }
 
+    /**
+    * @return array<mixed>
+    */
     public function showJsonDeck(): array
     {
         $values = [];
