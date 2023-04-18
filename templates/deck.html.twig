@@ -13,13 +13,13 @@
 
                 {% if remaining_cards %}
                     <div class="deck">
-                        <span class="black">{{ remaining_cards }}</span>
+                        <span class="spadescard">{{ remaining_cards }}</span>
                     </div>
                 {% endif %}
 
                 {% for card, details in my_deck %}
                     <div class="one-card">
-                        <span class="{{ details.color }}">
+                        <span class="{{ details.suit }}card card">
 
                             {# {{ details.suit|raw }}<br> #}
                             <i class="{{ details.suit }}"></i><br>
