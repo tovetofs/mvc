@@ -81,7 +81,7 @@ class ScoreBoard
                     break;
                 }
             }
-        } else {
+        } elseif ($pointSystem === 'Eng') {
             foreach (self::$gamePointsEng as $rule => $points) {
                 $result = $gameRules->$rule($cards);
                 if ($result) {
@@ -110,7 +110,7 @@ class ScoreBoard
             if ($this->totalSum >= 200) {
                 $win = true;
             }
-        } else {
+        } elseif ($pointSystem === 'Eng') {
             if ($this->totalSum >= 70) {
                 $win = true;
             }
