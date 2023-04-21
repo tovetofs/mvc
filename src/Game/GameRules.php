@@ -155,30 +155,41 @@ class GameRules
             }
             $cardValues[] = $card->value();
         }
-        // Sort cards
+        // Check if five cards on row/col
+        if (sizeof($cardValues) === 5) {
+            $result = $this->straight2($cardValues);
+        }
+        return $result;
+    }
+
+    /**
+     * @param array<int> $cardValues
+     */
+    public function straight2(array $cardValues): bool
+    {
+        $result = false;
+        // Sort values
         sort($cardValues);
         $round = 0;
         $cardsInRow = 0;
-        // Loop cards, check if value is equal to next card - 1
-        if (sizeof($cardValues) === 5) {
-            // $result = $this->straight2($cardValues);
-            foreach ($cardValues as $value) {
-                // $cards as Card
-                if ($value === ($cardValues[$round + 1] - 1)) {
-                    $cardsInRow += 1;
-                    if ($cardsInRow === 4) {
-                        $result = true;
-                        break;
-                    }
-                    $round += 1;
-                } elseif ($value === 1 && ($cardValues[$round + 1] === 10)) {
-                    $cardsInRow += 1;
-                    if ($cardsInRow === 4) {
-                        $result = true;
-                        break;
-                    }
-                    $round += 1;
+        // Loop cardvalues, see if cardvalue equals next value - 1 four times in a row
+        // Check aces for both 1 and 14
+        foreach ($cardValues as $value) {
+            // $cardValues as int
+            if ($value === ($cardValues[$round + 1] - 1)) {
+                $cardsInRow += 1;
+                if ($cardsInRow === 4) {
+                    $result = true;
+                    break;
                 }
+                $round += 1;
+            } elseif ($value === 1 && ($cardValues[$round + 1] === 10)) {
+                $cardsInRow += 1;
+                if ($cardsInRow === 4) {
+                    $result = true;
+                    break;
+                }
+                $round += 1;
             }
         }
         return $result;
