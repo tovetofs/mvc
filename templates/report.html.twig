@@ -74,7 +74,7 @@
             </div>
             <img class="report-img" src="{{ asset('img/bird4.jpg') }}" alt="Bird">
             <div class="report-side-text">
-                <p><a href="{{ path('card') }}">Kortspelet</a></p>
+                <p><a href="{{ path('card') }}">Kortleken</a></p>
             </div>
             <img class="report-img" src="{{ asset('img/bird5.jpg') }}" alt="Bird">
         </div>
@@ -126,12 +126,56 @@
         </div>
 
         <div class="report-text" id="kmom03">
-            <h2>Kmom03</h2>
-            <p>Testtext.</p>
+            <h2>Kmom03 - Applikation</h2>
+            <p>Till uppgiften valde jag att göra patiensspelet Poker squares. När jag byggde spelet 
+                använde jag mig av någon sorts bottom-up approach. Jag började att bryta ut små delar, 
+                fick dem att fungera och byggde sedan på mer efterhand. Första steget blev till exempel 
+                att göra en klass som håller en spelplan med 5x5 tomma rutor och skriva ut dem på 
+                sidan. Sedan lade jag till en metod för att placera ut ett kort på spelplanen. Nästa 
+                steg blev att göra en POST-route för att placera kortet, sedan spara spelplanen i 
+                sessionen, dirigera tillbaka till play-routen och ta fram spelplanen igen från sessionen. 
+                Efter detta skrev jag reglerna och till sist klassen som loopar igenom rader och kolumner, 
+                testar mot reglerna och skriver ut poängen. Till enskilda delar tog jag hjälp av 
+                pseudokod. Lite förenklat flödesschema skriver jag ofta, men pseudokod har jag inte använt 
+                tidigare.</p>
+
+            <p>Jag tycker att det inte är helt lätt att veta vad som bör vara enskilda klasser. Jag 
+                valde ett upplägg med liknande klasser som i Yahtzee-uppgiften från OOPython-kursen 
+                med en klass för spelplanen, en som räknar ut poängställningen och en för reglerna. 
+                I GamePlan finns en multidimensionell array som håller tomma slottar eller kort för 
+                rutorna på spelplanen. ScoreBoard återskapas i play-routen efter varje placerat kort. 
+                Den innehåller metoder för att räkna ut poängen för varje rad och kolumn och dessa 
+                sparas sedan i två arrayer. I GameRules finns endast reglerna. Jag ändrade en del i 
+                klasserna jag skapade till kmom02, till exempel skapar jag kortleken utifrån två 
+                arrayer med färg respektive värde istället för att använda json-filen.</p>
+            <p>Jag tycker att mina klasser blev bra men kanske hade det gått att dela upp i fler 
+                klasser? Det hade nog också varit bra att dela upp en del stora metoder i fler mindre. 
+                Jag tycker att min kontroller-fil blev så slimmad som det går. Däremot blev det ganska 
+                mycket logik i template-filen, med två nestlade for-loopar för att rita ut spelplanen, 
+                så detta hade jag jobbat mer med om jag hade haft mer tid. Nästa gång ska jag försöka 
+                använda en lite mer top-down approach, planera lite mer på förhand hur jag ska lösa 
+                uppgiften och prova att använda flödesscheman ännu mer.</p>
+            <p>När jag testade phpmd fick en av mina metoder i regel-klassen Cyclomatic Complexity på 10 
+                så den delade jag upp i två metoder. Fick också problem med onödiga else-satser och dessa 
+                kunde jag arrangera om. Ett problem kunde jag inte lösa. Fick missing class import där 
+                jag använde ett exception. PHP STAN klarade jag till och med nivå 8. </p>
+            <p>Gillar uppdelningen av template-filer, kontroller-filer och applikations-kod i Symfony. 
+                Verkar ju smart att ha själva applikations-koden separat så man kan flytta den till ett 
+                annat ramverk om man skulle vilja. </p>
+            <p>TIL den här veckan är hur man använder PHPStan och PHPMD, vad SOLID och Liskovs 
+                substitutionsprincip är. Föreläsningen om problemlösning var riktigt intressant!</p>
         </div>
 
         <div class="report-side">
             <img class="report-img" src="{{ asset('img/bird6.jpg') }}" alt="Bird">
+            <div class="report-side-text">
+                <p><a href="{{ path('game') }}">Kortspelet (Poker squares)</a></p>
+            </div>
+            <img class="report-img" src="{{ asset('img/bird10.jpg') }}" alt="Bird">
+            <div class="report-side-text">
+                <p><a href="{{ path('api') }}">Api landningssida</a></p>
+            </div>
+            <img class="report-img" src="{{ asset('img/bird9.jpg') }}" alt="Bird">
         </div>
 
     </div>
