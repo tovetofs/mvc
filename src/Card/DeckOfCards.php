@@ -9,21 +9,23 @@ class DeckOfCards
      */
     private array $deck = [];
 
+    /**
+     * @var array<string>
+     */
+    private array $suits = array("clubs", "diamonds", "hearts", "spades");
+
+    /**
+     * @var array<string>
+     */
+    private array $ranks = array("A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K");
+
     public function __construct()
     {
-        $str = file_get_contents('json/cards.json');
-        $json = json_decode($str, true);
-        foreach ($json as $suit => $val) {
-            $keys = array_keys($val);
-            foreach ($keys as $key) {
-                $rank = (string)$key;
+        foreach ($this->suits as $suit) {
+            foreach ($this->ranks as $rank) {
                 $card = new CardGraphic($suit, $rank);
                 $this->deck[] = $card;
             }
-            // foreach ($val as $rank => $utf) {
-            //     $card = new Card($suit, $rank);
-            //     $this->deck[] = $card;
-            // }
         }
     }
 
