@@ -100,7 +100,7 @@ class GameControllerTwig extends AbstractController
         SessionInterface $session
     ): Response {
         // Get placement from POST, split into array
-        $place = explode(", ", $request->request->get("place"));
+        $place = explode(", ", strval($request->request->get("place")));
 
         // Get my card, deck and gameplan from session
         // $myDeck = $session->get("game_deck");

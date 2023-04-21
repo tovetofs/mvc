@@ -21,7 +21,14 @@ class ApiControllerTwig extends AbstractController
     {
         date_default_timezone_set('Europe/Stockholm');
         $number = random_int(0, 4);
+        // Gives back false if error, eg missing file
         $str = file_get_contents('json/quotes.json');
+
+        // If false
+        if ($str === false) {
+            $str = '';
+        }
+
         $json = json_decode($str, true);
         $jsonquote = $json[$number];
         $today = date("Y-m-d H:i:s");
@@ -148,11 +155,17 @@ class ApiControllerTwig extends AbstractController
         $gamePlan = $session->get("game_plan");
 
         $data = [
-            "row_score" => $myScore->rowSums(),
-            "col_score" => $myScore->colSums(),
-            "total_score" => $myScore->totalSum(),
-            "game_plan" => $gamePlan->showJsonBoard(),
+            "Inget spel startat",
         ];
+
+        if ($session->get("game_plan")) {
+            $data = [
+                "row_score" => $myScore->rowSums(),
+                "col_score" => $myScore->colSums(),
+                "total_score" => $myScore->totalSum(),
+                "game_plan" => $gamePlan->showJsonBoard(),
+            ];
+        }
 
         $response = new JsonResponse($data);
         $response->setEncodingOptions(

@@ -13,6 +13,12 @@ class ControllerTwig extends AbstractController
     public function lucky(): Response
     {
         $str = file_get_contents('json/birds.json');
+
+        // If false
+        if ($str === false) {
+            $str = '';
+        }
+
         $json = json_decode($str, true);
         $number = random_int(0, 6);
         $jsonbird = $json[$number];
