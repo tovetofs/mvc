@@ -7,7 +7,7 @@ class DeckOfCards
     /**
      * @var array<mixed>
      */
-    private array $deck = [];
+    public array $deck = [];
 
     /**
      * @var array<string>
