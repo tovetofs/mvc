@@ -185,10 +185,10 @@ class GameRules
                 $round += 1;
             } elseif ($value === 1 && ($cardValues[$round + 1] === 10)) {
                 $cardsInRow += 1;
-                if ($cardsInRow === 4) {
-                    $result = true;
-                    break;
-                }
+                // if ($cardsInRow === 4) {
+                //     $result = true;
+                //     break;
+                // }
                 $round += 1;
             }
         }
