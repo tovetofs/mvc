@@ -178,6 +178,59 @@
             <img class="report-img" src="{{ asset('img/bird9.jpg') }}" alt="Bird">
         </div>
 
+        <div class="report-head">
+            <div class="line-circles">
+                <div class="circle-1"></div>
+                <div class="circle-2"></div>
+                <div class="circle-3"></div>
+                <div class="circle-4"></div>
+                <div class="circle-3"></div>
+                <div class="circle-2"></div>
+                <div class="circle-1"></div>
+            </div>
+        </div>
+
+        <div class="report-side2">
+            <img class="report-img" src="{{ asset('img/bird3.jpg') }}" alt="Bird">
+            <div class="report-side-text">
+                <p><a href="https://www.student.bth.se/~tole22/dbwebb-kurser/mvc/me/report/docs/api/index.html">Dokumentation</a></p>
+            </div>
+            <img class="report-img" src="{{ asset('img/bird4.jpg') }}" alt="Bird">
+            <div class="report-side-text">
+                <p><a href="https://www.student.bth.se/~tole22/dbwebb-kurser/mvc/me/report/docs/coverage/index.html">Kodtäckning</a></p>
+            </div>
+            <img class="report-img" src="{{ asset('img/bird5.jpg') }}" alt="Bird">
+        </div>
+
+        <div class="report-text2" id="kmom04">
+            <h2>Kmom04 - Enhetstestning</h2>
+            <p>Att skriva tester känns bekant sedan OOPython-kursen. Det gick bra att installera och 
+                jobba med PHPUnit och Xdebug. Kodtäcknings-rapporterna var väldigt användbara för att 
+                se vilken kod man faktiskt testade. Insåg också att jag kunde ta bort en bit kod som 
+                jag inte lyckades nå med testerna och som visade sig vara helt onödig. Det är lätt 
+                att glömma att testa även negativa utfall.</p>
+            <p>Lyckades få 100% kodtäckning, testade dock inte mina controllers. Det gick ganska lätt 
+                att skapa testerna för de flesta klasser, men jag kan se att det finns stor en 
+                förbättringspotential avseende min källkod. Vissa klasser var svårare att testa på 
+                grund av beroenden, till exempel skapar jag Card inuti DeckOfCards. I GameRules-klassen 
+                hade jag kunnat testa värdena på korten istället för att testa de faktiska 
+                Card-objekten. För att testa klassen behövde jag alltså först skapa Card-objekt vilket 
+                ju inte verkar så bra. Överlag ser jag att jag har ganska mycket beroenden mellan 
+                mina klasser. </p>
+            <p>Särskilt svårt att skriva tester var det för ScoreBoards-klassen som är beroende av i 
+                princip alla andra klasser och flera metoder är beroende av andra metoder inuti klassen. 
+                Jag lyckades inte alls testa den isolerat från de andra enheterna och de testerna som 
+                jag fick till kändes mindre värdefulla.</p>
+            <p>På grund av tidsbrist valde jag att inte försöka skriva om min kod, men om jag skulle 
+                gjort det så skulle jag fokuserat på två saker: att i GameRules-klassen testa värdena 
+                på korten och inte de faktiska Card-objekten. Sedan hade jag försökt skriva om 
+                ScoreBoards-klassen för att få bort beroenden till andra klasser. </p>
+            <p>Efter att ha försökt skriva bra tester till min ScoreBoards-klass så inser jag absolut 
+                att det finns ett samband mellan testbar kod och ren kod. </p>
+            <p>Min TIL den här veckan är hur man använder phpunit och genererar kommentarer med 
+                phpdoc, värdet av att skriva bra tester och sambandet mellan testbar kod och bra kod.</p>
+        </div>
+
     </div>
     
     
