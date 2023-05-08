@@ -49,6 +49,7 @@ class DeckOfCardsTest extends TestCase
         $this->assertContainsOnlyInstancesOf('\App\Card\CardGraphic', $testDraw, 'Testing
             that testDraw contains CardGraphic');
         $this->assertEquals(49, $testDeck3->remainingCards(), 'Checking that there are 49 cards left in deck');
+        $this->assertNotEquals(52, $testDeck3->remainingCards(), 'Should not be 52 cards left');
     }
 
     /**

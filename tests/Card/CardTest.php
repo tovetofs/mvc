@@ -18,6 +18,7 @@ class CardTest extends TestCase
         $this->assertInstanceOf("\App\Card\Card", $testCard);
 
         $this->assertEquals('spades7', $testCard->displayCard(), 'Should be spades7');
+        $this->assertNotEquals('spades8', $testCard->displayCard(), 'Should not be spades8');
     }
 
     /**
@@ -31,6 +32,7 @@ class CardTest extends TestCase
         $this->assertEquals('spades', $testCard2->showSuit(), 'Should be spades');
         $this->assertEquals('A', $testCard2->showRank(), 'Should be rank A');
         $this->assertEquals(1, $testCard2->showValue(), 'Should be value 1');
+        $this->assertNotEquals('A', $testCard2->showValue(), 'Value should not be A');
     }
 
     /**
@@ -55,6 +57,7 @@ class CardTest extends TestCase
         $this->assertEquals('diamonds', $testCard4->showSuit(), 'Should be diamonds');
         $this->assertEquals('Q', $testCard4->showRank(), 'Should be rank Q');
         $this->assertEquals(12, $testCard4->showValue(), 'Should be value 12');
+        $this->assertNotEquals('hearts', $testCard4->showSuit(), 'Should not be hearts');
     }
 
     /**

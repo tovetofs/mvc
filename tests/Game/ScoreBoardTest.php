@@ -20,7 +20,6 @@ class ScoreBoardTest extends TestCase
     public function testCheckWin(): void
     {
         $testBoard = new ScoreBoard();
-        // $testBoard->totalSum() = 90;
         $this->assertFalse($testBoard->checkWin('Eng'));
         $this->assertFalse($testBoard->checkWin('Am'));
     }
@@ -66,6 +65,7 @@ class ScoreBoardTest extends TestCase
         $this->assertEquals([100, 0, 0, 0, 0], $testBoard3->rowSums());
         $this->assertEquals([0, 0, 0, 0, 0], $testBoard3->colSums());
         $this->assertEquals(100, $testBoard3->totalSum());
+        $this->assertNotEquals(90, $testBoard3->totalSum());
     }
 
     /**
@@ -101,5 +101,6 @@ class ScoreBoardTest extends TestCase
         $this->assertEquals([30, 30, 30, 0, 0], $testBoard4->colSums());
         $this->assertEquals(90, $testBoard4->totalSum());
         $this->assertTrue($testBoard4->checkWin('Eng'));
+        $this->assertNotEquals([0, 0, 0, 0, 0], $testBoard4->colSums());
     }
 }

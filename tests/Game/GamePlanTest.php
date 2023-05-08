@@ -34,6 +34,7 @@ class GamePlanTest extends TestCase
         $gamePlanArray = $testPlan2->showGamePlan();
         $placedCard = $gamePlanArray['row1']['col1']->displayCard();
         $this->assertEquals('spades3', $placedCard, '3 of spades should be found on the game plan');
+        $this->assertNotEquals('spades2', $placedCard, 'Should not be 2 of spades');
         $this->assertEquals(1, $testPlan2->playedCards(), 'There should be 1 card played on board');
     }
 

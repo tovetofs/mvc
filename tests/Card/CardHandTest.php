@@ -17,12 +17,13 @@ class CardHandTest extends TestCase
     {
         $testArray = array(new Card('hearts', 'K'), new Card('clubs', '8'));
         $testHand = new CardHand($testArray);
-        $this->assertInstanceOf("\App\Card\CardHand", $testHand, 'Should be instancde Card');
+        $this->assertInstanceOf("\App\Card\CardHand", $testHand, 'Should be instance Card');
 
         $testHand->add(new Card('spades', 'A'));
 
         $resArray = $testHand->showHand()['spadesA'];
         $this->assertEquals('spades', $resArray['suit'], 'Suit should be spades');
+        $this->assertNotEquals('clubs', $resArray['suit'], 'Suit should not be clubs');
         $resArray2 = $testHand->showJsonDeck()[0];
         $this->assertEquals('K', $resArray2['rank'], 'Rank should be K');
     }
