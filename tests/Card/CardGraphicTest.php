@@ -12,9 +12,9 @@ class CardGraphicTest extends TestCase
     /**
      * Construct object
      */
-    public function testCreateCardGraphic()
+    public function testCreateCardGraphic(): void
     {
-        $testCardGraphic = new CardGraphic('spades', 2);
+        $testCardGraphic = new CardGraphic('spades', '2');
         $this->assertInstanceOf("\App\Card\CardGraphic", $testCardGraphic);
 
         $this->assertEquals('&#9824', $testCardGraphic->showUTF());

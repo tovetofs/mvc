@@ -13,7 +13,7 @@ class DeckOfCardsTest extends TestCase
      * Construct object DeckOfCards
      * Tests that it contains only CardGraphic
      */
-    public function testCreateDeckOfCards()
+    public function testCreateDeckOfCards(): void
     {
         $testDeck = new DeckOfCards();
         $this->assertInstanceOf("\App\Card\DeckOfCards", $testDeck);
@@ -24,7 +24,7 @@ class DeckOfCardsTest extends TestCase
      * Constructs a deck, then shuffles and compares the original to the shuffled (should be different),
      * then sorts the deck and compares again with the original deck (should be the same)
      */
-    public function testShuffleDeck()
+    public function testShuffleDeck(): void
     {
         $testDeck2 = new DeckOfCards();
         $testDeckNew = $testDeck2->showDeck();
@@ -39,7 +39,7 @@ class DeckOfCardsTest extends TestCase
      * Constructs a deck, check number of cards, then draw cards, check that 3 cards was drawn and that
      * it was CardGraphic, then check remaining cards in deck
      */
-    public function testDrawCards()
+    public function testDrawCards(): void
     {
         $testDeck3 = new DeckOfCards();
         $this->assertEquals(52, $testDeck3->remainingCards(), 'Testing that there are 52 cards in a deck');
@@ -54,7 +54,7 @@ class DeckOfCardsTest extends TestCase
     /**
      * Testing to return deck of cards as an associative array
      */
-    public function testShowJsonDeck()
+    public function testShowJsonDeck(): void
     {
         $testDeck4 = new DeckOfCards();
         $testJson = $testDeck4->showJsonDeck();

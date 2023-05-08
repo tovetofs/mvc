@@ -12,7 +12,7 @@ class CardTest extends TestCase
     /**
      * Construct object
      */
-    public function testCreateCardNbr()
+    public function testCreateCardNbr(): void
     {
         $testCard = new Card('spades', '7');
         $this->assertInstanceOf("\App\Card\Card", $testCard);
@@ -20,7 +20,7 @@ class CardTest extends TestCase
         $this->assertEquals('spades7', $testCard->displayCard());
     }
 
-    public function testCreateCardAce()
+    public function testCreateCardAce(): void
     {
         $testCard2 = new Card('spades', 'A');
         $this->assertInstanceOf("\App\Card\Card", $testCard2);
@@ -30,7 +30,7 @@ class CardTest extends TestCase
         $this->assertEquals(1, $testCard2->showValue());
     }
 
-    public function testCreateCardJack()
+    public function testCreateCardJack(): void
     {
         $testCard3 = new Card('hearts', 'J');
 
@@ -39,7 +39,7 @@ class CardTest extends TestCase
         $this->assertEquals(11, $testCard3->value());
     }
 
-    public function testCreateCardQueen()
+    public function testCreateCardQueen(): void
     {
         $testCard4 = new Card('diamonds', 'Q');
 
@@ -48,7 +48,7 @@ class CardTest extends TestCase
         $this->assertEquals(12, $testCard4->showValue());
     }
 
-    public function testCreateCardKing()
+    public function testCreateCardKing(): void
     {
         $testCard5 = new Card('clubs', 'K');
 

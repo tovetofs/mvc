@@ -17,7 +17,7 @@ class GamePlanTest extends TestCase
     /**
      * Construct object
      */
-    public function testCreateGamePlan()
+    public function testCreateGamePlan(): void
     {
         $testPlan = new GamePlan();
         $this->assertInstanceOf("\App\Game\GamePlan", $testPlan, 'Should be an object GamePlan');
@@ -27,7 +27,7 @@ class GamePlanTest extends TestCase
     /**
      * Placing a card on Game Plan, checking that correct card can be found on game plan
      */
-    public function testPlaceCardOnGamePlan()
+    public function testPlaceCardOnGamePlan(): void
     {
         $testPlan2 = new GamePlan();
         $testPlan2->placeCard('row1', 'col1', new Card('spades', '3'));
@@ -37,7 +37,7 @@ class GamePlanTest extends TestCase
         $this->assertEquals(1, $testPlan2->playedCards(), 'There should be 1 card played on board');
     }
 
-    public function testShowJsonBoard()
+    public function testShowJsonBoard(): void
     {
         $testPlan3 = new GamePlan();
         $testPlan3->placeCard('row2', 'col2', new Card('spades', 'K'));
