@@ -2,14 +2,19 @@
 
 namespace App\Card;
 
+/**
+ * Class representing a card hand
+ */
 class CardHand
 {
     /**
+     * Array containing the cards in the hand
      * @var array<mixed>
      */
     private array $hand = [];
 
     /**
+     * Constructor, takes array of drawn cards as parameter
      * @param array<Card> $drawnCards
      */
     public function __construct(array $drawnCards)
@@ -20,14 +25,18 @@ class CardHand
         }
     }
 
+    /**
+     * Adds a card to the hand
+     */
     public function add(Card $card): void
     {
         $this->hand[] = $card;
     }
 
     /**
-    * @return array<mixed>
-    */
+     * Displaying the hand as an array
+     * @return array<mixed>
+     */
     public function showHand(): array
     {
         $values = [];
@@ -38,8 +47,9 @@ class CardHand
     }
 
     /**
-    * @return array<mixed>
-    */
+     * Displaying the hand as an array
+     * @return array<mixed>
+     */
     public function showJsonDeck(): array
     {
         $values = [];

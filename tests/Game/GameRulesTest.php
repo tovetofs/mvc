@@ -10,7 +10,7 @@ use App\Card\DeckOfCards;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Test cases for class Card.
+ * Test cases for class Game Rule.
  */
 class GameRulesTest extends TestCase
 {
@@ -32,6 +32,9 @@ class GameRulesTest extends TestCase
         $this->assertFalse($testRules->straightFlush($wrongArray));
     }
 
+    /**
+     * Testing function getRanks
+     */
     public function testGetRanks(): void
     {
         $testRules3 = new GameRules();
@@ -50,6 +53,9 @@ class GameRulesTest extends TestCase
         );
     }
 
+    /**
+     * Testing rule full house
+     */
     public function testFullHouse(): void
     {
         $testRules4 = new GameRules();
@@ -61,10 +67,11 @@ class GameRulesTest extends TestCase
 
         $this->assertTrue($testRules4->fullHouse($cardArray4));
         $this->assertFalse($testRules4->fullHouse($wrongArray));
-
-        // Lägg till test med neg utfall!
     }
 
+    /**
+     * Testing rule four of a kind
+     */
     public function testFourOfAKind(): void
     {
         $testRules5 = new GameRules();
@@ -76,10 +83,11 @@ class GameRulesTest extends TestCase
 
         $this->assertTrue($testRules5->fourOfAKind($cardArray5));
         $this->assertFalse($testRules5->fourOfAKind($wrongArray));
-
-        // Lägg till test med neg utfall!
     }
 
+    /**
+     * Testing rule three of a kind
+     */
     public function testThreeOfAKind(): void
     {
         $testRules6 = new GameRules();
@@ -95,6 +103,9 @@ class GameRulesTest extends TestCase
         // Lägg till test med neg utfall!
     }
 
+    /**
+     * Testing rule two pairs
+     */
     public function testTwoPair(): void
     {
         $testRules7 = new GameRules();
@@ -108,6 +119,9 @@ class GameRulesTest extends TestCase
         $this->assertFalse($testRules7->twoPairs($wrongArray));
     }
 
+    /**
+     * Testing rule pair
+     */
     public function testPair(): void
     {
         $testRules8 = new GameRules();

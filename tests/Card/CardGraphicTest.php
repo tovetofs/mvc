@@ -10,13 +10,13 @@ use PHPUnit\Framework\TestCase;
 class CardGraphicTest extends TestCase
 {
     /**
-     * Construct object
+     * Creates a new Card Graphic and test that the right code is returned
      */
     public function testCreateCardGraphic(): void
     {
         $testCardGraphic = new CardGraphic('spades', '2');
-        $this->assertInstanceOf("\App\Card\CardGraphic", $testCardGraphic);
+        $this->assertInstanceOf("\App\Card\CardGraphic", $testCardGraphic, 'Should be a CardGraphic');
 
-        $this->assertEquals('&#9824', $testCardGraphic->showUTF());
+        $this->assertEquals('&#9824', $testCardGraphic->showUTF(), 'Should display &#9825');
     }
 }

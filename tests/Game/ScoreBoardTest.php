@@ -10,12 +10,12 @@ use App\Card\DeckOfCards;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Test cases for class Card.
+ * Test cases for class ScoreBoard.
  */
 class ScoreBoardTest extends TestCase
 {
     /**
-     * Construct object
+     * Creates a scoreboard, tests checkWin when 0 points
      */
     public function testCheckWin(): void
     {
@@ -25,6 +25,9 @@ class ScoreBoardTest extends TestCase
         $this->assertFalse($testBoard->checkWin('Am'));
     }
 
+    /**
+     * Tests calculate score for array of cards
+     */
     public function testCalculateScore(): void
     {
         $testBoard2 = new ScoreBoard();
@@ -43,6 +46,9 @@ class ScoreBoardTest extends TestCase
         ), 'Should return 30 points');
     }
 
+    /**
+     * Tests calculate score for a row of cards on the board
+     */
     public function testRowScore(): void
     {
         $testBoard3 = new ScoreBoard();
@@ -62,6 +68,10 @@ class ScoreBoardTest extends TestCase
         $this->assertEquals(100, $testBoard3->totalSum());
     }
 
+    /**
+     * Tests calculate score for columns of cards on the board
+     * and total sum
+     */
     public function testColScore(): void
     {
         $testBoard4 = new ScoreBoard();

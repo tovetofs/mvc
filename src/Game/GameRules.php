@@ -9,10 +9,13 @@ use App\Card\CardGraphic;
 use App\Card\CardHand;
 use App\Card\DeckOfCards;
 
+/**
+ * Class representing the game rules
+ */
 class GameRules
 {
-    // Test if Royal Flush
     /**
+     * Tests if array of cards is a royal flush
      * @param array<mixed> $cards
      */
     public function royalFlush(array $cards): bool
@@ -34,8 +37,8 @@ class GameRules
         return $result;
     }
 
-    // Test if Straight Flush
     /**
+     * Tests if array of cards is a straight flush
      * @param array<Card> $cards
      */
     public function straightFlush(array $cards): bool
@@ -47,8 +50,9 @@ class GameRules
         return $result;
     }
 
-    // Returns the value of an array of cards
     /**
+     * Saves the value of the cards in an array of cards in an array, then counts
+     * how many cards of each value is found, returns array
      * @param array<mixed> $cards
      * @return array<int>
      */
@@ -67,8 +71,8 @@ class GameRules
         return $vals;
     }
 
-    // Test if Four Of A Kind
     /**
+     * Tests if array of cards is a four of a kind
      * @param array<Card> $cards
      */
     public function fourOfAKind(array $cards): bool
@@ -81,8 +85,8 @@ class GameRules
         return $result;
     }
 
-    // Test if Full House
     /**
+     * Tests if array of cards is a full house
      * @param array<Card> $cards
      */
     public function fullHouse(array $cards): bool
@@ -95,8 +99,8 @@ class GameRules
         return $result;
     }
 
-    // Test if Three Of A Kind
     /**
+     * Tests if array of cards is a three of a kind
      * @param array<Card> $cards
      */
     public function threeOfAKind(array $cards): bool
@@ -109,8 +113,8 @@ class GameRules
         return $result;
     }
 
-    // Test if Two Pairs
     /**
+     * Tests if array of cards is two pairs
      * @param array<Card> $cards
      */
     public function twoPairs(array $cards): bool
@@ -126,8 +130,8 @@ class GameRules
         return $result;
     }
 
-    // Test if Pair
     /**
+     * Tests if array of cards is a pair
      * @param array<Card> $cards
      */
     public function pair(array $cards): bool
@@ -140,8 +144,9 @@ class GameRules
         return $result;
     }
 
-    // Test if straight
     /**
+     * Tests if array of cards is a straight part 1
+     * Checks if there are 5 different values in array of cards
      * @param array<mixed> $cards
      */
     public function straight(array $cards): bool
@@ -163,6 +168,8 @@ class GameRules
     }
 
     /**
+     * Tests if array of cards is a straight part 2
+     * Checks if the cards are consecutive
      * @param array<int> $cardValues
      */
     public function straight2(array $cardValues): bool
@@ -195,8 +202,8 @@ class GameRules
         return $result;
     }
 
-    // Test if Flush
     /**
+     * Tests if array of cards is a flush
      * @param array<mixed> $cards
      */
     public function flush(array $cards): bool

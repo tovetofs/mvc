@@ -15,7 +15,7 @@ use PHPUnit\Framework\TestCase;
 class GamePlanTest extends TestCase
 {
     /**
-     * Construct object
+     * Creates a new game plan, tests than it can be displayed as an array
      */
     public function testCreateGamePlan(): void
     {
@@ -37,6 +37,9 @@ class GamePlanTest extends TestCase
         $this->assertEquals(1, $testPlan2->playedCards(), 'There should be 1 card played on board');
     }
 
+    /**
+     * Placing a card on Game Plan, checking that correct card can be found on game plan
+     */
     public function testShowJsonBoard(): void
     {
         $testPlan3 = new GamePlan();

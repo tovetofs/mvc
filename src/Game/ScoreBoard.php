@@ -7,22 +7,26 @@ use App\Card\CardGraphic;
 use App\Card\CardHand;
 use App\Card\DeckOfCards;
 
+/**
+ * Class representing the score board
+ */
 class ScoreBoard
 {
     /**
+     * Array with the columns on the game plan
      * @var array<string>
      */
     public static array $staticGameCols = array("col1", "col2", "col3", "col4", "col5");
 
-    // Rules sorted according to points - american system
     /**
+     * Rules sorted according to points - american system
      * @var array<string, int>
      */
     public static array $gamePointsAm = array("royalFlush"=>100, "straightFlush"=>75, "fourOfAKind"=>50,
         "fullHouse"=>25, "flush"=>20, "straight"=>15, "threeOfAKind"=>10, "twoPairs" =>5, "pair"=>2);
 
-    // Rules sorted according to points - english system
     /**
+     * Rules sorted according to points - english system
      * @var array<string, int>
      */
     public static array $gamePointsEng = array("royalFlush"=>30, "straightFlush"=>30, "fourOfAKind"=>16,
@@ -31,16 +35,20 @@ class ScoreBoard
     private float $totalSum = 0;
 
     /**
+     * Private variable holding the score for each row
      * @var array<int>
      */
     private array $rowSums = [];
 
     /**
+     * Private variable holding the score for each column
      * @var array<int>
      */
     private array $colSums = [];
 
-    // Sets the scores in each row as an array
+    /**
+     * Loops through the rows and call calculateScores for each row
+     */
     public function rowScore(GamePlan $gamePlan, GameRules $gameRules, string $pointSystem): void
     {
         $resArray = [];
@@ -51,7 +59,9 @@ class ScoreBoard
         // return $resArray;
     }
 
-    // Sets the scores in each column as an array
+    /**
+     * Loops through the columns and call calculateScores for each column
+     */
     public function colScore(GamePlan $gamePlan, GameRules $gameRules, string $pointSystem): void
     {
         $resArray = [];
@@ -66,8 +76,9 @@ class ScoreBoard
         // return $resArray;
     }
 
-    // Calculate the score of an array of cards, loop through the set of rules
     /**
+     * Calculates the score of an array of cards, loops through the rules and saves
+     * highest score
      * @param array<Card> $cards
      */
     public function calculateScores(array $cards, GameRules $gameRules, string $pointSystem): int
@@ -94,7 +105,9 @@ class ScoreBoard
         return $score;
     }
 
-    // Sets the total sum of all rows and columns
+    /**
+     * Calls rowScore and colScore, saves total sum
+     */
     public function setTotalSum(GamePlan $gamePlan, GameRules $gameRules, string $pointSystem): void
     {
         $this->rowScore($gamePlan, $gameRules, $pointSystem);
@@ -102,7 +115,9 @@ class ScoreBoard
         $this->totalSum = array_sum($this->rowSums) + array_sum($this->colSums);
     }
 
-    // Check if score is enough to win
+    /**
+     * Check if score is enough to win
+     */
     public function checkWin(string $pointSystem): bool
     {
         $win = false;
@@ -118,25 +133,27 @@ class ScoreBoard
         return $win;
     }
 
-    // Returns array with score for each row
     /**
-    * @return array<int>
-    */
+     * Returns array with score for each row
+     * @return array<int>
+     */
     public function rowSums(): array
     {
         return $this->rowSums;
     }
 
-    // Returns array with score for each column
     /**
-    * @return array<int>
-    */
+     * Returns array with score for each column
+     * @return array<int>
+     */
     public function colSums(): array
     {
         return $this->colSums;
     }
 
-    // Returns total score
+    /**
+     * Returns total score
+     */
     public function totalSum(): float
     {
         return $this->totalSum;
