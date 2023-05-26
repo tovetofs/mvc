@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mitt bibliotek{% endblock %}
+
+{% block body %}
+{# <style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>Hello {{ controller_name }}! ✅</h1>
+
+    This friendly message is coming from:
+    <ul>
+        <li>Your controller at <code><a href="{{ '/Users/tovelernvall/dbwebb-kurser/mvc/me/report/src/Controller/LibraryController.php'|file_link(0) }}">src/Controller/LibraryController.php</a></code></li>
+        <li>Your template at <code><a href="{{ '/Users/tovelernvall/dbwebb-kurser/mvc/me/report/templates/library/index.html.twig'|file_link(0) }}">templates/library/index.html.twig</a></code></li>
+    </ul>
+</div> #}
+
+<div class="index-main">
+    <div class="main-text">
+        <h1>Biblioteket</h1>
+
+        <p><a href="{{ path('read_many') }}">Visa alla böckerna i biblioteket.</a></p>
+
+        <p>Lägg till en bok i biblioteket: </p>
+
+        <table class="form-table">
+            <form action="{{ path('create_book') }}" method="post">
+                <tr>
+                    <td class="colText"><label for="title">Titel:</label></td>
+                    <td class="colInput"><input type="text" id="title" name="title"></td>
+                </tr>
+
+            <tr>
+                <td><label for="isbn">ISBN:</label></td>
+                <td><input type="text" id="isbn" name="isbn"></td>
+            </tr>
+            <tr>
+                <td><label for="author">Författare:</label></td>
+                <td><input type="text" id="author" name="author"></td>
+            </tr>
+
+            <tr>
+                <td><label for="image">Bild-URL:</label></td>
+                <td><input type="text" id="image" name="image"></td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Skicka"></td>
+                
+            </tr>
+            </form>
+        </table>
+
+    </div>
+
+    <div class="main-img">
+        <img class="lucky-img" src="{{ asset('img/about.jpg') }}" alt="Bird">
+    </div>
+
+</div>
+{% endblock %}

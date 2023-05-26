@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mitt bibliotek{% endblock %}
+
+{% block body %}
+
+<div class="index-main">
+    <div class="main-text">
+        <h1>Biblioteket - redigera</h1>
+
+        <p>Visa alla böckerna i <a href="{{ path('read_many') }}">biblioteket</a></p>
+
+        <p>Redigera bok: </p>
+
+        <form action="{{ path('update_book') }}" method="post">
+            <label for="title">Id:</label>
+            <input type="text" id="id" name="id" value="{{my_book.getId}}" readonly><br>
+
+            <label for="title">Titel:</label>
+            <input type="text" id="title" name="title" value="{{my_book.getTitle}}"><br>
+
+            <label for="isbn">ISBN:</label>
+            <input type="text" id="isbn" name="isbn" value="{{my_book.getIsbn}}"><br>
+
+            <label for="author">Författare:</label>
+            <input type="text" id="author" name="author" value="{{my_book.getAuthor}}"><br>
+
+            <label for="image">Bild-URL:</label>
+            <input type="text" id="image" name="image" value="{{my_book.getImage}}"><br>
+
+            <input type="submit" value="Skicka">
+        </form>
+
+    </div>
+
+    <div class="main-img">
+
+    </div>
+
+</div>
+{% endblock %}

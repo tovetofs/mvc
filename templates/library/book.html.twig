@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mitt bibliotek{% endblock %}
+
+{% block body %}
+
+<div class="index-main">
+    <div class="main-text">
+        <h1>{{my_book.getTitle}}</h1>
+
+        <p>Författare: {{my_book.getAuthor}}</p>
+
+        <p>ISBN: {{my_book.getIsbn}}</p>
+
+        <p>Id: {{my_book.getId}}</p>
+
+        <p><a href="{{ path('update', {idNbr: my_book.getId}) }}"><i class="fa-solid fa-pen-to-square"></i> Redigera</a></p>
+
+        <p><a href="{{ path('delete', {idNbr: my_book.getId}) }}"><i class="fa-solid fa-trash-can"></i> Radera</a></p>
+
+        {# <div class="line-circles">
+            <div class="circle-1"></div>
+            <div class="circle-2"></div>
+            <div class="circle-3"></div>
+            <div class="circle-4"></div>
+            <div class="circle-3"></div>
+            <div class="circle-2"></div>
+            <div class="circle-1"></div>
+        </div> #}
+
+    </div>
+
+    <div class="lib-img">
+
+        <img src="{{my_book.getImage}}" alt="{{my_book.getTitle}}">
+
+    </div>
+
+    <p>Visa alla böckerna i <a href="{{ path('read_many') }}">biblioteket</a></p>
+
+</div>
+{% endblock %}
