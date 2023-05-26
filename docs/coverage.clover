@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1685099202">
-  <project timestamp="1685099202">
+<coverage generated="1685107647">
+  <project timestamp="1685107647">
     <file name="/Users/tovelernvall/dbwebb-kurser/mvc/me/report/src/Card/Card.php">
       <class name="App\Card\Card" namespace="global">
         <metrics complexity="13" methods="8" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="23" coveredstatements="23" elements="31" coveredelements="31"/>
@@ -331,7 +331,7 @@
     </file>
     <file name="/Users/tovelernvall/dbwebb-kurser/mvc/me/report/src/Controller/LibraryController.php">
       <class name="App\Controller\LibraryController" namespace="global">
-        <metrics complexity="9" methods="9" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="67" coveredstatements="0" elements="76" coveredelements="0"/>
+        <metrics complexity="9" methods="9" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="68" coveredstatements="0" elements="77" coveredelements="0"/>
       </class>
       <line num="23" type="method" name="index" visibility="public" complexity="1" crap="2" count="0"/>
       <line num="26" type="stmt" count="0"/>
@@ -406,10 +406,11 @@
       <line num="213" type="stmt" count="0"/>
       <line num="216" type="stmt" count="0"/>
       <line num="224" type="method" name="isbnOneBook" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="229" type="stmt" count="0"/>
       <line num="230" type="stmt" count="0"/>
       <line num="231" type="stmt" count="0"/>
       <line num="234" type="stmt" count="0"/>
-      <metrics loc="237" ncloc="178" classes="1" methods="9" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="67" coveredstatements="0" elements="76" coveredelements="0"/>
+      <metrics loc="237" ncloc="179" classes="1" methods="9" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="68" coveredstatements="0" elements="77" coveredelements="0"/>
     </file>
     <file name="/Users/tovelernvall/dbwebb-kurser/mvc/me/report/src/Controller/ProjControllerTwig.php">
       <class name="App\Controller\ProjControllerTwig" namespace="global">
@@ -656,6 +657,6 @@
       <line num="84" type="stmt" count="0"/>
       <metrics loc="87" ncloc="46" classes="1" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="0" elements="17" coveredelements="0"/>
     </file>
-    <metrics files="16" loc="1721" ncloc="1301" classes="15" methods="88" coveredmethods="44" conditionals="0" coveredconditionals="0" statements="471" coveredstatements="191" elements="559" coveredelements="235"/>
+    <metrics files="16" loc="1721" ncloc="1302" classes="15" methods="88" coveredmethods="44" conditionals="0" coveredconditionals="0" statements="472" coveredstatements="191" elements="560" coveredelements="235"/>
   </project>
 </coverage>
