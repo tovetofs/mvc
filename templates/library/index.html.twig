@@ -20,38 +20,45 @@
 
 <div class="index-main">
     <div class="main-text">
-        <h1>Biblioteket</h1>
+        <h1>Biblioteket - start</h1>
 
         <p><a href="{{ path('read_many') }}">Visa alla böckerna i biblioteket.</a></p>
 
-        <p>Lägg till en bok i biblioteket: </p>
+        <div class="line-circles">
+            <div class="circle-1"></div>
+            <div class="circle-2"></div>
+            <div class="circle-3"></div>
+            <div class="circle-4"></div>
+            <div class="circle-3"></div>
+            <div class="circle-2"></div>
+            <div class="circle-1"></div>
+        </div>
+
+        <h2>Lägg till en bok i biblioteket</h2>
 
         <table class="form-table">
             <form action="{{ path('create_book') }}" method="post">
                 <tr>
                     <td class="colText"><label for="title">Titel:</label></td>
-                    <td class="colInput"><input type="text" id="title" name="title"></td>
+                    <td class="colInput"><input type="text" id="title" name="title" required></td>
+                </tr>
+                <tr>
+                    <td><label for="isbn">ISBN:</label></td>
+                    <td><input type="text" id="isbn" name="isbn" required></td>
+                </tr>
+                <tr>
+                    <td><label for="author">Författare:</label></td>
+                    <td><input type="text" id="author" name="author" required></td>
                 </tr>
 
-            <tr>
-                <td><label for="isbn">ISBN:</label></td>
-                <td><input type="text" id="isbn" name="isbn"></td>
-            </tr>
-            <tr>
-                <td><label for="author">Författare:</label></td>
-                <td><input type="text" id="author" name="author"></td>
-            </tr>
+                <tr>
+                    <td><label for="image">Bild-URL:</label></td>
+                    <td><input type="text" id="image" name="image" required></td>
+                </tr>
 
-            <tr>
-                <td><label for="image">Bild-URL:</label></td>
-                <td><input type="text" id="image" name="image"></td>
-            </tr>
-
-            <tr>
-                <td></td>
-                <td><input type="submit" value="Skicka"></td>
-                
-            </tr>
+                <tr>
+                    <td colspan="2" class="bottom-table"><input class="lib-btn" type="submit" value="Skicka"></td>
+                </tr>
             </form>
         </table>
 

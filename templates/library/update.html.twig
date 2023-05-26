@@ -8,11 +8,9 @@
     <div class="main-text">
         <h1>Biblioteket - redigera</h1>
 
-        <p>Visa alla böckerna i <a href="{{ path('read_many') }}">biblioteket</a></p>
+        <p>Redigera bok: {{ my_book.getTitle }}</p>
 
-        <p>Redigera bok: </p>
-
-        <form action="{{ path('update_book') }}" method="post">
+        {# <form action="{{ path('update_book') }}" method="post">
             <label for="title">Id:</label>
             <input type="text" id="id" name="id" value="{{my_book.getId}}" readonly><br>
 
@@ -29,12 +27,49 @@
             <input type="text" id="image" name="image" value="{{my_book.getImage}}"><br>
 
             <input type="submit" value="Skicka">
-        </form>
+        </form> #}
+        <table class="form-table">
+            <form action="{{ path('update_book') }}" method="post">
+                <tr>
+                    <td class="colText"><label for="title">Id:</label></td>
+                    <td class="colInput"><input type="text" id="id" name="id" value="{{my_book.getId}}" readonly></td>
+                </tr>
+
+                <tr>
+                    <td><label for="title">Titel:</label></td>
+                    <td><input type="text" id="title" name="title" value="{{my_book.getTitle}}"></td>
+                </tr>
+
+                <tr>
+                    <td><label for="isbn">ISBN:</label></td>
+                    <td><input type="text" id="isbn" name="isbn" value="{{my_book.getIsbn}}"></td>
+                </tr>
+                <tr>
+                    <td><label for="author">Författare:</label></td>
+                    <td><input type="text" id="author" name="author" value="{{my_book.getAuthor}}"></td>
+                </tr>
+
+                <tr>
+                    <td><label for="image">Bild-URL:</label></td>
+                    <td><input type="text" id="image" name="image" value="{{my_book.getImage}}"></td>
+                </tr>
+
+                <tr>
+                    <td colspan="2" class="bottom-table"><input class="lib-btn" type="submit" value="Skicka"></td>
+                </tr>
+            </form>
+        </table>
 
     </div>
 
     <div class="main-img">
 
+    </div>
+
+    
+    <div class="lib-bottom">
+        <p>Visa alla böckerna i <a href="{{ path('read_many') }}">biblioteket</a></p>
+        <p><a href="{{ path('app_library') }}">Biblioteket - start</a></p>
     </div>
 
 </div>

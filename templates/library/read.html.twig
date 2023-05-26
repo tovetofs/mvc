@@ -17,7 +17,7 @@
                 <th class="colAuthor">Författare</th>
                 <th class="colIsbn">ISBN</th>
                 <th class="colImage">Bild</th>
-                <th class="colEdit"></th>
+                <th class="colEdit">Redigera</th>
             </tr>
             
             {% for book in my_books %}
@@ -40,6 +40,9 @@
         </table>
 
 
+    <div class="lib-bottom">
+        <p><a href="{{ path('app_library') }}">Biblioteket - start</a></p>
+    </div>
 
 </div>
 {% endblock %}

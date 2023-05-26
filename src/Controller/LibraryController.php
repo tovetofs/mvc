@@ -224,11 +224,11 @@ class LibraryController extends AbstractController
     #[Route('api/library/book/{isbn}', name: 'api/isbn')]
     public function isbnOneBook(
         LibraryRepository $libraryRepository,
-        int $isbn
+        string $isbn
     ): Response {
-        // $isbnStr = strval($isbn);
+        $isbnStr = strval($isbn);
         $book = $libraryRepository
-            ->findOneByIsbn($isbn);
+            ->findOneByIsbn($isbnStr);
 
         // return $this->render('library/book.html.twig', $data);
         return $this->json($book);
