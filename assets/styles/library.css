@@ -1,0 +1,50 @@
+/* STYLING FOR LIBRARY */
+
+/* flash message */
+.flash {
+    font-size: 1.4rem;
+    color: var(--crazy);
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+/* image */
+.lib-img {
+    grid-column: 3/4;
+    padding: 1rem;
+}
+
+/* Table for library*/
+.lib-table th {
+    border: none;
+    padding: 0.3rem;
+}
+
+.lib-table td {
+    padding: 0.3rem;
+}
+
+.colId {
+    width: 30px;
+}
+
+.colImage {
+    width: 60px;
+}
+
+.colIsbn {
+    width: 130px;
+}
+
+.colTitle {
+    width: 300px;
+}
+
+/* Table for form */
+.form-table td {
+    padding: 0.3rem;
+}
+
+.colText {
+    width: 120px;
+}
