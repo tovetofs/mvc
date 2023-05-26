@@ -14,6 +14,12 @@
     padding: 1rem;
 }
 
+/* bottom */
+.lib-bottom {
+    text-align: center;
+    grid-column: 1/4;
+}
+
 /* Table for library*/
 .lib-table th {
     border: none;
@@ -24,12 +30,16 @@
     padding: 0.3rem;
 }
 
+.lib-table {
+    margin-bottom: 2rem;
+}
+
 .colId {
     width: 30px;
 }
 
 .colImage {
-    width: 60px;
+    width: 50px;
 }
 
 .colIsbn {
@@ -40,11 +50,38 @@
     width: 300px;
 }
 
+.colEdit {
+    width: 220px;
+}
+
+.lib-table i {
+    padding-left: 0.4rem;
+    font-size: 1.4rem;
+}
+
 /* Table for form */
 .form-table td {
     padding: 0.3rem;
 }
 
 .colText {
-    width: 120px;
+    width: 180px;
+}
+
+.lib-btn {
+    padding: 0.4rem 2rem;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    background: var(--circle);
+    border: none;
+    font-family: 'Lora', serif;
+}
+
+.lib-btn:hover {
+    background: var(--hoverlink);
+    color: white;
+}
+
+.bottom-table {
+    text-align: center;
 }
