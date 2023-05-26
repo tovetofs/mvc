@@ -9,6 +9,9 @@
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
 
+        <!-- Anslut Font Awesome -->
+        <script src="https://kit.fontawesome.com/33ce3346c3.js" crossorigin="anonymous"></script>
+
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
@@ -28,6 +31,7 @@
                         <p><a href="{{ path('lucky') }}" class="dist">Kmom01 - Lucky</a></p>
                         <p><a href="{{ path('card') }}" class="dist">Kmom02 - Card</a></p>
                         <p><a href="{{ path('game') }}" class="dist">Kmom03 - Game</a></p>
+                        <p><a href="{{ path('app_library') }}" class="dist">Kmom05 - Library</a></p>
                     </div>
                 </div>
                 <div class="dropdown">
