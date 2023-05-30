@@ -83,7 +83,7 @@ class LibraryRepository extends ServiceEntityRepository
             ->getOneOrNullResult()
         ;
 
-        if (!$result instanceOf Library) {
+        if (!$result instanceof Library) {
             $result = null;
         }
         return $result;

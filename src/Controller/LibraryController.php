@@ -239,7 +239,7 @@ class LibraryController extends AbstractController
         $isbnStr = strval($isbn);
         $book = $libraryRepository
             ->findOneByIsbn($isbnStr);
-        
+
         if (!$book) {
             $book = 'Ingen bok med det ISBN-numret hittades!';
         }
