@@ -291,6 +291,47 @@
             <img class="report-img" src="{{ asset('img/bird9.jpg') }}" alt="Bird">
         </div>
 
+        <div class="report-head">
+            <div class="line-circles">
+                <div class="circle-1"></div>
+                <div class="circle-2"></div>
+                <div class="circle-3"></div>
+                <div class="circle-4"></div>
+                <div class="circle-3"></div>
+                <div class="circle-2"></div>
+                <div class="circle-1"></div>
+            </div>
+        </div>
+
+        <div class="report-side2">
+            <img class="report-img" src="{{ asset('img/bird1.jpg') }}" alt="Bird">
+            <div class="report-side-text">
+                <p><a href="{{ path('metrics') }}">Metrics analys</a></p>            
+            </div>
+            <img class="report-img" src="{{ asset('img/bird4.jpg') }}" alt="Bird">
+            <div class="report-side-text">
+                <p><a href="https://www.student.bth.se/~tole22/dbwebb-kurser/mvc/me/report/docs/metrics/">PHP metrics</a></p>
+            </div>
+        </div>
+
+        <div class="report-text2" id="kmom06">
+            <h2>Kmom06 - Automatiserad test</h2>
+            <p>Jag tycker att phpmetrics var användbar, särskilt bilden maintainability/complexity visade 
+                tydligt vilka filer som var mest sårbara. Det var enkelt att hitta olika nyckeltal på 
+                sidorna och hitta svaga punkter. </p>
+            <p>Scrutinizer tycker jag var svårare att förstå sig på, vad poängen egentligen baseras på. Vid 
+                första bygget fick jag kodkvalitet på 9,96 och coverage på 42% (mina controllers är inte 
+                inkluderade i testerna och inte heller klasserna som arbetar mot databasen). Efter jag gjort 
+                mina förbättringsförsök blev det ingen skillnad alls på siffrorna, men jag fick bort ett 
+                par issues.</p>
+            <p>Det har varit intressant att under kursen arbeta med begrepp som coupling, cohesion och 
+                complexity. När jag har skrivit enhetstester och använt testverktygen har jag förstått en del 
+                av det som är mindre bra med min kod och hur jag borde ha gjort istället. Badges kan nog vara 
+                bra i viss mån, men jag är tveksam till att lita för mycket på det.</p>
+            <p>Min TIL den här veckan är vad som menas med coupling, cohesion och complexity, hur man 
+                använder verktygen phpmetrics och scrutinizer.</p>
+        </div>
+
     </div>
     
     
