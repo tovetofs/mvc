@@ -1,0 +1,141 @@
+{% extends "base.html.twig" %}
+
+{% block title %}About{% endblock %}
+
+{% block body %}
+    <div class="metrics-main">
+        <div class="full-text">
+            <h1>Metrics analys</h1>
+            <h2>Introduktion</h2>
+            <p>När det handlar om kodkvalitet finns det ett antal begrepp som är intressanta.</p>
+            <p><span class="metrics-bold">Codestyle</span>, kodstil, innebär att det finns en uppsättning regler eller riktlinjer som man 
+                bör följa när man skriver sin kod. En del kan var generella medan andra mer specifika 
+                för ett visst programmeringsspråk. Det kan handla om layout, exempelvis indragningar, 
+                eller hur man använder versaler. I den här kursen har vi använt oss av verktyget PHP 
+                CS fixer som hjälper oss att undersöka och rätta vår kod.</p>
+            <p><span class="metrics-bold">Coverage</span>, kodtäckning, visar andelen kod som täcks av våra enhetstester. Det säger 
+                egentligen ingenting om testernas kvalitet, men kan ändå vara ett bra mått på hur 
+                vältestad koden är. Det är eftersträvansvärt med så hög kodtäckning som möjligt, men 
+                det är inte alltid möjligt att nå 100%. PHP unit är ett bra verktyg för att köra 
+                enhetstester och generera kodtäckningsrapporter.</p>
+            <p><span class="metrics-bold">Complexity</span>, komplexitet, har att göra med hur lätt en kod är att förstå och underhålla. 
+                Komplexiteten kan mätas med exempelvis cyklomatisk komplexitet. För varje beslutspunkt 
+                (exempelvis en if-sats) i koden ökar komplexiteten med ett. Högre komplexitet innebär 
+                att koden blir svårare att testa och underhålla. Generellt bör komplexiteten för en 
+                modul inte överstiga 10.</p>
+            <p><span class="metrics-bold">Cohesion</span>, sammanhållning, har att göra med hur väl de olika delarna av en modul hänger 
+                ihop. Detta kan mätas med LCOM, Lack of Cohesive Methods. Det bästa värdet man kan få 
+                här är 1, dvs klassen har ett ansvarsområde och allt hänger ihop. LCOM över 3-5 är 
+                normalt sett inte önskvärt.</p>
+            <p><span class="metrics-bold">Coupling</span>, koppling, handlar om hur modulerna är beroende av varandra. Coupling kan delas 
+                upp i två delar: efferent coupling som mäter antalet klasser som en viss klass är 
+                beroende av samt afferent coupling som mäter hur många klasser som är beroende av en 
+                viss klass. Kan mätas med instability index (som kan ligga mellan 0 och 1), ett högt 
+                värde här innebär stort beroende av andra klasser, lågt värde innebär att den är stabil 
+                och inte beroende av andra klasser.</p>
+            <p><span class="metrics-bold">CRAP</span> kan stå för Change Risk Analyzer and Predictor eller Change Risk Anti Patttern och 
+                är ett sätt att hitta metoder med hög komplexitet och hög risk. CRAP score är en 
+                sammanvägning av en metods storlek, dess komplexitet samt hur väl den täcks av 
+                testerna. Man kan säga att vid en hög komplexitet behöver kodtäckningen vara bättre.</p>
+        </div>
+        <div class="metrics-circles">
+            <div class="line-circles">
+                <div class="circle-1"></div>
+                <div class="circle-2"></div>
+                <div class="circle-3"></div>
+                <div class="circle-4"></div>
+                <div class="circle-3"></div>
+                <div class="circle-2"></div>
+                <div class="circle-1"></div>
+            </div>
+        </div>
+
+        <div class="three-text">
+            <h2>PHP Metrics</h2>
+            <p>Min kod innehåller sex stycket violations.</p>
+            <p>Enhetstesterna består av 7 testsviter och 70 assertions. Nio stycken klasser (56.25%) 
+                täcks inte av testerna, det rör sig om kontrollers och klasserna till databasen.</p>
+            <p>Den genomsnittliga cyklomatiska komplexiteten för min kod är 5,31 per klass. De klasser 
+                med högst komplexitet är GameRules- och ScoreBoard-klasserna med 29 respektive 14 i 
+                cyklomatisk komplexitet.</p>
+            <p>Högt LCOM hittas i min kontroller för api-routes (6) och kontrollern för biblioteket (3). 
+                Instability index är högt (1) för alla mina kontroller.</p>
+        </div>
+
+        <div class="metrics-img">
+            <img class="metrics-img" src="{{ asset('img/phpmetrics.jpg') }}" alt="PHP metrics">
+        </div>
+
+        <div class="metrics-circles">
+            <div class="line-circles">
+                <div class="circle-1"></div>
+                <div class="circle-2"></div>
+                <div class="circle-3"></div>
+                <div class="circle-4"></div>
+                <div class="circle-3"></div>
+                <div class="circle-2"></div>
+                <div class="circle-1"></div>
+            </div>
+        </div>
+
+        <div class="full-text">
+            <h2>Scrutinizer</h2>
+            <p>Här fick min kod betyget 9.96 med 6 issues och kodtäckning på 42%. Build passerade.</p>
+            <p>ScoreBoard-klassen fick rating B, resten A. Klasserna med högst komplexitet var GameRules 
+                och ScoreBoard. Metoderna med högst komplexitet och högst CRAP score fanns i GameRules 
+                och ScoreBoard-klasserna.</p>
+            <p>Resultat före förbättringar:</p>
+
+            <img class="lucky-img" src="https://scrutinizer-ci.com/g/tovetofs/mvc/badges/quality-score.png?b=main" alt="Scrutinizer badge">
+            <img class="lucky-img" src="https://scrutinizer-ci.com/g/tovetofs/mvc/badges/coverage.png?b=main" alt="Scrutinizer badge">
+            <img class="lucky-img" src="https://scrutinizer-ci.com/g/tovetofs/mvc/badges/build.png?b=main" alt="Scrutinizer badge">
+            <img class="lucky-img" src="https://scrutinizer-ci.com/g/tovetofs/mvc/badges/code-intelligence.svg?b=main" alt="Scrutinizer badge">
+        </div>
+
+        <div class="metrics-circles">
+            <div class="line-circles">
+                <div class="circle-1"></div>
+                <div class="circle-2"></div>
+                <div class="circle-3"></div>
+                <div class="circle-4"></div>
+                <div class="circle-3"></div>
+                <div class="circle-2"></div>
+                <div class="circle-1"></div>
+            </div>
+        </div>
+
+        <div class="full-text">
+            <h2>Förbättringar</h2>
+            <p>Förbättringar jag kommer jobba på är följande:</p>
+            <p><span class="metrics-bold">Minska komplexiteten</span> i GameRules-klassen. GameRules-klassen sticker ut både vad gäller 
+                PHP Metrics och Scrutinizer. När jag gjorde enhetstesterna märkte jag att den inte var 
+                så lätt att testa och det borde finnas stor förbättringspotential här.</p>
+            <p><span class="metrics-bold">Förbättra cohesion</span>, här är det framförallt ApiControllerTwig som sticker ut.</p>
+            <p><span class="metrics-bold">Förbättra kodtäckningen</span>. Kodtäckningen är endast 42% på hela mitt projekt och det finns 
+                således stor förbättrings-potential här. Här kommer jag inrikta mig på att testa 
+                någon kontroller.</p>
+            <p>Mätvärden efter förbättringar:</p>
+
+        </div>
+
+        <div class="metrics-circles">
+            <div class="line-circles">
+                <div class="circle-1"></div>
+                <div class="circle-2"></div>
+                <div class="circle-3"></div>
+                <div class="circle-4"></div>
+                <div class="circle-3"></div>
+                <div class="circle-2"></div>
+                <div class="circle-1"></div>
+            </div>
+        </div>
+
+        <div class="full-text">
+            <h2>Diskussion</h2>
+            <p></p>
+
+        </div>
+    </div>
+    
+    
+{% endblock %}
