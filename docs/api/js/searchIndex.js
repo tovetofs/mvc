@@ -156,31 +156,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Controller-ApiControllerTwig.html#method_jsonNumber"
         },                {
-            "fqsen": "\\App\\Controller\\ApiControllerTwig\u003A\u003AjsonDeck\u0028\u0029",
-            "name": "jsonDeck",
-            "summary": "",
-            "url": "classes/App-Controller-ApiControllerTwig.html#method_jsonDeck"
-        },                {
-            "fqsen": "\\App\\Controller\\ApiControllerTwig\u003A\u003AjsonShuffle\u0028\u0029",
-            "name": "jsonShuffle",
-            "summary": "",
-            "url": "classes/App-Controller-ApiControllerTwig.html#method_jsonShuffle"
-        },                {
-            "fqsen": "\\App\\Controller\\ApiControllerTwig\u003A\u003AjsonDrawOne\u0028\u0029",
-            "name": "jsonDrawOne",
-            "summary": "",
-            "url": "classes/App-Controller-ApiControllerTwig.html#method_jsonDrawOne"
-        },                {
-            "fqsen": "\\App\\Controller\\ApiControllerTwig\u003A\u003AjsonDrawSeveral\u0028\u0029",
-            "name": "jsonDrawSeveral",
-            "summary": "",
-            "url": "classes/App-Controller-ApiControllerTwig.html#method_jsonDrawSeveral"
-        },                {
-            "fqsen": "\\App\\Controller\\ApiControllerTwig\u003A\u003AjsonGame\u0028\u0029",
-            "name": "jsonGame",
-            "summary": "",
-            "url": "classes/App-Controller-ApiControllerTwig.html#method_jsonGame"
-        },                {
             "fqsen": "\\App\\Controller\\CardControllerTwig",
             "name": "CardControllerTwig",
             "summary": "",
@@ -240,6 +215,11 @@ Search.appendIndex(
             "name": "api",
             "summary": "",
             "url": "classes/App-Controller-ControllerTwig.html#method_api"
+        },                {
+            "fqsen": "\\App\\Controller\\ControllerTwig\u003A\u003Ametrics\u0028\u0029",
+            "name": "metrics",
+            "summary": "",
+            "url": "classes/App-Controller-ControllerTwig.html#method_metrics"
         },                {
             "fqsen": "\\App\\Controller\\GameControllerTwig",
             "name": "GameControllerTwig",
@@ -331,11 +311,6 @@ Search.appendIndex(
             "summary": "Tests\u0020if\u0020array\u0020of\u0020cards\u0020is\u0020a\u0020straight\u0020flush",
             "url": "classes/App-Game-GameRules.html#method_straightFlush"
         },                {
-            "fqsen": "\\App\\Game\\GameRules\u003A\u003AgetRanks\u0028\u0029",
-            "name": "getRanks",
-            "summary": "Saves\u0020the\u0020value\u0020of\u0020the\u0020cards\u0020in\u0020an\u0020array\u0020of\u0020cards\u0020in\u0020an\u0020array,\u0020then\u0020counts\nhow\u0020many\u0020cards\u0020of\u0020each\u0020value\u0020is\u0020found,\u0020returns\u0020array",
-            "url": "classes/App-Game-GameRules.html#method_getRanks"
-        },                {
             "fqsen": "\\App\\Game\\GameRules\u003A\u003AfourOfAKind\u0028\u0029",
             "name": "fourOfAKind",
             "summary": "Tests\u0020if\u0020array\u0020of\u0020cards\u0020is\u0020a\u0020four\u0020of\u0020a\u0020kind",
@@ -365,11 +340,6 @@ Search.appendIndex(
             "name": "straight",
             "summary": "Tests\u0020if\u0020array\u0020of\u0020cards\u0020is\u0020a\u0020straight\u0020part\u00201\nChecks\u0020if\u0020there\u0020are\u00205\u0020different\u0020values\u0020in\u0020array\u0020of\u0020cards",
             "url": "classes/App-Game-GameRules.html#method_straight"
-        },                {
-            "fqsen": "\\App\\Game\\GameRules\u003A\u003Astraight2\u0028\u0029",
-            "name": "straight2",
-            "summary": "Tests\u0020if\u0020array\u0020of\u0020cards\u0020is\u0020a\u0020straight\u0020part\u00202\nChecks\u0020if\u0020the\u0020cards\u0020are\u0020consecutive",
-            "url": "classes/App-Game-GameRules.html#method_straight2"
         },                {
             "fqsen": "\\App\\Game\\GameRules\u003A\u003Aflush\u0028\u0029",
             "name": "flush",
@@ -600,6 +570,61 @@ Search.appendIndex(
             "name": "findOneByIsbn",
             "summary": "Returns\u0020a\u0020specific\u0020book\u0020by\u0020ISBN",
             "url": "classes/App-Repository-LibraryRepository.html#method_findOneByIsbn"
+        },                {
+            "fqsen": "\\App\\Controller\\ApiCardControllerTwig",
+            "name": "ApiCardControllerTwig",
+            "summary": "",
+            "url": "classes/App-Controller-ApiCardControllerTwig.html"
+        },                {
+            "fqsen": "\\App\\Controller\\ApiCardControllerTwig\u003A\u003AjsonDeck\u0028\u0029",
+            "name": "jsonDeck",
+            "summary": "",
+            "url": "classes/App-Controller-ApiCardControllerTwig.html#method_jsonDeck"
+        },                {
+            "fqsen": "\\App\\Controller\\ApiCardControllerTwig\u003A\u003AjsonShuffle\u0028\u0029",
+            "name": "jsonShuffle",
+            "summary": "",
+            "url": "classes/App-Controller-ApiCardControllerTwig.html#method_jsonShuffle"
+        },                {
+            "fqsen": "\\App\\Controller\\ApiDrawControllerTwig",
+            "name": "ApiDrawControllerTwig",
+            "summary": "",
+            "url": "classes/App-Controller-ApiDrawControllerTwig.html"
+        },                {
+            "fqsen": "\\App\\Controller\\ApiDrawControllerTwig\u003A\u003AjsonDrawOne\u0028\u0029",
+            "name": "jsonDrawOne",
+            "summary": "",
+            "url": "classes/App-Controller-ApiDrawControllerTwig.html#method_jsonDrawOne"
+        },                {
+            "fqsen": "\\App\\Controller\\ApiDrawControllerTwig\u003A\u003AjsonDrawSeveral\u0028\u0029",
+            "name": "jsonDrawSeveral",
+            "summary": "",
+            "url": "classes/App-Controller-ApiDrawControllerTwig.html#method_jsonDrawSeveral"
+        },                {
+            "fqsen": "\\App\\Controller\\ApiGameControllerTwig",
+            "name": "ApiGameControllerTwig",
+            "summary": "",
+            "url": "classes/App-Controller-ApiGameControllerTwig.html"
+        },                {
+            "fqsen": "\\App\\Controller\\ApiGameControllerTwig\u003A\u003AjsonGame\u0028\u0029",
+            "name": "jsonGame",
+            "summary": "",
+            "url": "classes/App-Controller-ApiGameControllerTwig.html#method_jsonGame"
+        },                {
+            "fqsen": "\\App\\Game\\GameRulesTwo",
+            "name": "GameRulesTwo",
+            "summary": "Class\u0020representing\u0020the\u0020game\u0020rules\u0020nbr\u00202",
+            "url": "classes/App-Game-GameRulesTwo.html"
+        },                {
+            "fqsen": "\\App\\Game\\GameRulesTwo\u003A\u003AgetRanks\u0028\u0029",
+            "name": "getRanks",
+            "summary": "Saves\u0020the\u0020value\u0020of\u0020the\u0020cards\u0020in\u0020an\u0020array\u0020of\u0020cards\u0020in\u0020an\u0020array,\u0020then\u0020counts\nhow\u0020many\u0020cards\u0020of\u0020each\u0020value\u0020is\u0020found,\u0020returns\u0020array",
+            "url": "classes/App-Game-GameRulesTwo.html#method_getRanks"
+        },                {
+            "fqsen": "\\App\\Game\\GameRulesTwo\u003A\u003Astraight2\u0028\u0029",
+            "name": "straight2",
+            "summary": "Tests\u0020if\u0020array\u0020of\u0020cards\u0020is\u0020a\u0020straight\u0020part\u00202\nChecks\u0020if\u0020the\u0020cards\u0020are\u0020consecutive",
+            "url": "classes/App-Game-GameRulesTwo.html#method_straight2"
         },                {
             "fqsen": "\\",
             "name": "\\",
