@@ -29,3 +29,7 @@ yarn-error.log
 tools/
 
 .phpdoc/
+
+
+# Mac OS
+.DS_Store

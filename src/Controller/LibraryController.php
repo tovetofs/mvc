@@ -140,18 +140,23 @@ class LibraryController extends AbstractController
         $book = $libraryRepository
             ->find($idNbr);
 
-        // $bookId = $book->getId();
-        $bookTitle = $book->getTitle();
+        $message = 'Ingen bok med det id-numret hittades!';
 
-        // tell Doctrine you want to (eventually) DELETE the Book
-        // (no queries yet)
-        $entityManager->remove($book);
+        if ($book) {
+            // $bookId = $book->getId();
+            $bookTitle = $book->getTitle();
 
-        // actually executes the queries (i.e. the INSERT query)
-        $entityManager->flush();
+            // tell Doctrine you want to (eventually) DELETE the Book
+            // (no queries yet)
+            $entityManager->remove($book);
+
+            // actually executes the queries (i.e. the INSERT query)
+            $entityManager->flush();
+
+            $message = $bookTitle . ' raderad!';
+        }
 
         // Save message in session
-        $message = $bookTitle . ' raderad!';
         $session->set("message", $message);
 
         return $this->redirectToRoute('read_many');
@@ -195,21 +200,26 @@ class LibraryController extends AbstractController
         $book = $libraryRepository
             ->find($idNbr);
 
-        // $book = new Library();
-        $book->setTitle($request->request->get("title"));
-        $book->setIsbn($request->request->get("isbn"));
-        $book->setAuthor($request->request->get("author"));
-        $book->setImage($request->request->get("image"));
+        $message = 'Ingen bok med det id-numret hittades';
 
-        // tell Doctrine you want to (eventually) save the Book
-        // (no queries yet)
-        $entityManager->persist($book);
+        if ($book) {
+            $book->setTitle($request->request->get("title"));
+            $book->setIsbn($request->request->get("isbn"));
+            $book->setAuthor($request->request->get("author"));
+            $book->setImage($request->request->get("image"));
 
-        // actually executes the queries (i.e. the INSERT query)
-        $entityManager->flush();
+            // tell Doctrine you want to (eventually) save the Book
+            // (no queries yet)
+            $entityManager->persist($book);
+
+            // actually executes the queries (i.e. the INSERT query)
+            $entityManager->flush();
+
+            // Create message
+            $message = $request->request->get("title") . ' uppdaterad!';
+        }
 
         // Save message in session
-        $message = $request->request->get("title") . ' uppdaterad!';
         $session->set("message", $message);
 
         // Redirect
@@ -229,6 +239,10 @@ class LibraryController extends AbstractController
         $isbnStr = strval($isbn);
         $book = $libraryRepository
             ->findOneByIsbn($isbnStr);
+        
+        if (!$book) {
+            $book = 'Ingen bok med det ISBN-numret hittades!';
+        }
 
         // return $this->render('library/book.html.twig', $data);
         return $this->json($book);

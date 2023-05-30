@@ -76,11 +76,16 @@ class LibraryRepository extends ServiceEntityRepository
      */
     public function findOneByIsbn(string $value): ?Library
     {
-        return $this->createQueryBuilder('l')
+        $result = $this->createQueryBuilder('l')
             ->andWhere('l.isbn = :isbn')
             ->setParameter('isbn', $value)
             ->getQuery()
             ->getOneOrNullResult()
         ;
+
+        if (!$result instanceOf Library) {
+            $result = null;
+        }
+        return $result;
     }
 }
