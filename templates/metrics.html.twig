@@ -64,6 +64,7 @@
 
         <div class="metrics-img">
             <img class="metrics-img" src="{{ asset('img/phpmetrics.jpg') }}" alt="PHP metrics">
+            <p class="img-text">De stora bollarna är GameRules-, ScoreBoard- och ApiControllerTwig-klasserna.</p>
         </div>
 
         <div class="metrics-circles">
@@ -86,10 +87,8 @@
                 och ScoreBoard-klasserna.</p>
             <p>Resultat före förbättringar:</p>
 
-            <img class="lucky-img" src="https://scrutinizer-ci.com/g/tovetofs/mvc/badges/quality-score.png?b=main" alt="Scrutinizer badge">
-            <img class="lucky-img" src="https://scrutinizer-ci.com/g/tovetofs/mvc/badges/coverage.png?b=main" alt="Scrutinizer badge">
-            <img class="lucky-img" src="https://scrutinizer-ci.com/g/tovetofs/mvc/badges/build.png?b=main" alt="Scrutinizer badge">
-            <img class="lucky-img" src="https://scrutinizer-ci.com/g/tovetofs/mvc/badges/code-intelligence.svg?b=main" alt="Scrutinizer badge">
+            <img class="badges-img" src="{{ asset('img/scrutinizer-badges.jpg') }}" alt="Scrutinizer Badges">
+
         </div>
 
         <div class="metrics-circles">
@@ -106,15 +105,30 @@
 
         <div class="full-text">
             <h2>Förbättringar</h2>
-            <p>Förbättringar jag kommer jobba på är följande:</p>
+            {# <p>Förbättringar jag kommer jobba på är följande:</p> #}
+            <h3>Förbättringsförslag</h3>
             <p><span class="metrics-bold">Minska komplexiteten</span> i GameRules-klassen. GameRules-klassen sticker ut både vad gäller 
                 PHP Metrics och Scrutinizer. När jag gjorde enhetstesterna märkte jag att den inte var 
-                så lätt att testa och det borde finnas stor förbättringspotential här.</p>
+                så lätt att testa och det borde alltså finnas stor förbättringspotential här.</p>
             <p><span class="metrics-bold">Förbättra cohesion</span>, här är det framförallt ApiControllerTwig som sticker ut.</p>
-            <p><span class="metrics-bold">Förbättra kodtäckningen</span>. Kodtäckningen är endast 42% på hela mitt projekt och det finns 
-                således stor förbättrings-potential här. Här kommer jag inrikta mig på att testa 
-                någon kontroller.</p>
-            <p>Mätvärden efter förbättringar:</p>
+            <p><span class="metrics-bold">Fixa issues</span>.</p>
+
+            <h3>Efter förbättringar</h3>
+            <p>För att förbättra cohesion löste jag det genom att dela upp ApiControllerTwig på flera filer, det blev ungefär en för varje 
+                kmom. LCOM för den filen minskade från 6 till 2.</p>
+            <p>Lyckades fixa tre av sex issues. Några issues gäller filerna .php-cs-fixer.dist.php och Kernel.php och de vet 
+                jag inte hur jag ska åtgärda.</p>
+            <p>Försökte minska komplexiteten genom att dela upp GameRules-klassen i två klasser och det minskade 
+                cyklomatiska komplexiteten från 29 till 22. Den nya filen fick en cyklomatisk komplexitet på 8. 
+                Däremot ökade LCOM från 2 till 6 vilket inte ju inte är önskvärt. Om jag hade haft mer tid skulle 
+                jag skrivit om GameRules-klassen helt och hållet och då i flera mindre men mer logiskt uppdelade 
+                bitar.</p>
+            <p>Resultat efter förbättringar:</p>
+            <img class="lucky-img" src="https://scrutinizer-ci.com/g/tovetofs/mvc/badges/quality-score.png?b=main" alt="Scrutinizer badge">
+            <img class="lucky-img" src="https://scrutinizer-ci.com/g/tovetofs/mvc/badges/coverage.png?b=main" alt="Scrutinizer badge">
+            <img class="lucky-img" src="https://scrutinizer-ci.com/g/tovetofs/mvc/badges/build.png?b=main" alt="Scrutinizer badge">
+            <img class="lucky-img" src="https://scrutinizer-ci.com/g/tovetofs/mvc/badges/code-intelligence.svg?b=main" alt="Scrutinizer badge">
+
 
         </div>
 
@@ -132,8 +146,14 @@
 
         <div class="full-text">
             <h2>Diskussion</h2>
-            <p></p>
-
+            <p>När jag arbetade med mina förbättringsförslag var det svårt att lösa de stora bitarna, 
+                cohesion, coupling och complexity, på ett bra sätt. Det hade varit så mycket enklare att 
+                göra rätt från början. Här tror jag mer på att försöka ha dessa begrepp i bakhuvudet när 
+                man förbereder sitt arbete och skriver sin kod från början. Sedan kan man göra testerna 
+                mer som ett kvitto på att det är ok. Redan när jag skrev enhetstesterna märkte jag att 
+                GameRules-klassen var svår att testa och det var ju också den som såg sämst ut i testerna. 
+                Den stora lärdomen här är alltså att skriva små och sammanhållna klasser med en uppgift 
+                från början.</p>
         </div>
     </div>
     

@@ -10,6 +10,7 @@ use App\Card\DeckOfCards;
 use App\Game\GamePlan;
 use App\Game\ScoreBoard;
 use App\Game\GameRules;
+use App\Game\GameRulesTwo;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;

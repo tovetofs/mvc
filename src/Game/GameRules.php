@@ -9,6 +9,8 @@ use App\Card\CardGraphic;
 use App\Card\CardHand;
 use App\Card\DeckOfCards;
 
+// use App\Game\GameRulesTwo;
+
 /**
  * Class representing the game rules
  */
@@ -50,26 +52,26 @@ class GameRules
         return $result;
     }
 
-    /**
-     * Saves the value of the cards in an array of cards in an array, then counts
-     * how many cards of each value is found, returns array
-     * @param array<mixed> $cards
-     * @return array<int>
-     */
-    public function getRanks(array $cards): array
-    {
-        $test = [];
-        // $result = 0;
-        foreach ($cards as $card) {
-            // $cards as Card
-            if (!$card) {
-                continue;
-            }
-            $test[] = $card->value();
-        }
-        $vals = array_count_values($test);
-        return $vals;
-    }
+    // /**
+    //  * Saves the value of the cards in an array of cards in an array, then counts
+    //  * how many cards of each value is found, returns array
+    //  * @param array<mixed> $cards
+    //  * @return array<int>
+    //  */
+    // public function getRanks(array $cards): array
+    // {
+    //     $test = [];
+    //     // $result = 0;
+    //     foreach ($cards as $card) {
+    //         // $cards as Card
+    //         if (!$card) {
+    //             continue;
+    //         }
+    //         $test[] = $card->value();
+    //     }
+    //     $vals = array_count_values($test);
+    //     return $vals;
+    // }
 
     /**
      * Tests if array of cards is a four of a kind
@@ -78,7 +80,8 @@ class GameRules
     public function fourOfAKind(array $cards): bool
     {
         $result = false;
-        $vals = $this->getRanks($cards);
+        $gameRulesTwo = new GameRulesTwo();
+        $vals = $gameRulesTwo->getRanks($cards);
         if (in_array(4, array_values($vals))) {
             $result = true;
         }
@@ -92,7 +95,8 @@ class GameRules
     public function fullHouse(array $cards): bool
     {
         $result = false;
-        $vals = $this->getRanks($cards);
+        $gameRulesTwo = new GameRulesTwo();
+        $vals = $gameRulesTwo->getRanks($cards);
         if (in_array(3, array_values($vals)) && in_array(2, array_values($vals))) {
             $result = true;
         }
@@ -106,7 +110,8 @@ class GameRules
     public function threeOfAKind(array $cards): bool
     {
         $result = false;
-        $vals = $this->getRanks($cards);
+        $gameRulesTwo = new GameRulesTwo();
+        $vals = $gameRulesTwo->getRanks($cards);
         if (in_array(3, array_values($vals))) {
             $result = true;
         }
@@ -120,7 +125,8 @@ class GameRules
     public function twoPairs(array $cards): bool
     {
         $result = false;
-        $vals = $this->getRanks($cards);
+        $gameRulesTwo = new GameRulesTwo();
+        $vals = $gameRulesTwo->getRanks($cards);
         $numbers = array_count_values($vals);
         if (array_key_exists(2, $numbers)) {
             if ($numbers[2] === 2) {
@@ -137,7 +143,8 @@ class GameRules
     public function pair(array $cards): bool
     {
         $result = false;
-        $vals = $this->getRanks($cards);
+        $gameRulesTwo = new GameRulesTwo();
+        $vals = $gameRulesTwo->getRanks($cards);
         if (in_array(2, array_values($vals))) {
             $result = true;
         }
@@ -162,42 +169,8 @@ class GameRules
         }
         // Check if five cards on row/col
         if (sizeof($cardValues) === 5) {
-            $result = $this->straight2($cardValues);
-        }
-        return $result;
-    }
-
-    /**
-     * Tests if array of cards is a straight part 2
-     * Checks if the cards are consecutive
-     * @param array<int> $cardValues
-     */
-    public function straight2(array $cardValues): bool
-    {
-        $result = false;
-        // Sort values
-        sort($cardValues);
-        $round = 0;
-        $cardsInRow = 0;
-        // Loop cardvalues, see if cardvalue equals next value - 1 four times in a row
-        // Check aces for both 1 and 14
-        foreach ($cardValues as $value) {
-            // $cardValues as int
-            if ($value === ($cardValues[$round + 1] - 1)) {
-                $cardsInRow += 1;
-                if ($cardsInRow === 4) {
-                    $result = true;
-                    break;
-                }
-                $round += 1;
-            } elseif ($value === 1 && ($cardValues[$round + 1] === 10)) {
-                $cardsInRow += 1;
-                // if ($cardsInRow === 4) {
-                //     $result = true;
-                //     break;
-                // }
-                $round += 1;
-            }
+            $gameRulesTwo = new GameRulesTwo();
+            $result = $gameRulesTwo->straight2($cardValues);
         }
         return $result;
     }
