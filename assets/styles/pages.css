@@ -151,7 +151,6 @@ img {
 
 .metrics-img {
     grid-column: 3/4;
-    padding: 1rem;
 }
 
 .metrics-circles {
@@ -161,4 +160,8 @@ img {
 
 .metrics-bold {
     font-weight: bold;
+}
+
+.badges-img {
+    width: 60%;
 }
